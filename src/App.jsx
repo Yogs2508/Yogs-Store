@@ -118,21 +118,21 @@ const INITIAL_PRODUCTS = [
           {/* TAB 2: ATUR HARGA PRODUK */}
           {adminActiveTab === 'products' && (
             <div className="mt-6 space-y-4">
-          {/* TAB 3: PENGATURAN TOKO */}
-          {adminActiveTab === 'settings' && (
-            <div className="mt-6 max-w-xl space-y-4">
-              <div className="p-5 rounded-2xl bg-[#141727] border border-white/10 space-y-4">
-                <h3 className="font-bold text-white text-sm border-b border-white/5 pb-2">Konfigurasi Toko, WhatsApp & Barcode QRIS</h3>
-                
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2 border-b border-white/5">
                 <div>
-                  <label className="text-xs text-slate-300 block mb-1">Nama Toko:</label>
-                  <input
-                    type="text"
-                    value={storeConfig.storeName}
-                    onChange={(e) => setStoreConfig({ ...storeConfig, storeName: e.target.value })}
-                    className="w-full px-3 py-2 bg-[#1a1e33] border border-white/10 rounded-xl text-xs text-white"
-                  />
+                  <h3 className="font-bold text-white text-base">Atur Harga & Varian Langganan</h3>
+                  <p className="text-xs text-slate-400">Perubahan harga langsung diterapkan secara langsung ke katalog toko.</p>
                 </div>
+                <button
+                  onClick={() => setShowAddProductModal(true)}
+                  className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs shadow-lg shadow-purple-600/30 transition-all cursor-pointer"
+                >
+                  <Package className="w-4 h-4" />
+                  <span>+ Tambah Produk Baru</span>
+                </button>
+              </div>
+
+              <div className="grid grid-cols-1 gap-4">
 
                 <div>
                   <label className="text-xs text-slate-300 block mb-1">Nomor WhatsApp Admin (Awalan 62, contoh: 6281234567890):</label>
