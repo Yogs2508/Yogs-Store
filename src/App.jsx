@@ -258,13 +258,13 @@ export default function App() {
 
   const handleVerifyAdminPin = (e) => {
     e.preventDefault();
-    if (adminPinInput === 'Alvino0203!') {
+    if (adminPinInput === '020320') {
       setIsAdminMode(true);
       setShowAdminLoginModal(false);
       setAdminPinInput('');
       setAdminPinError('');
     } else {
-      setAdminPinError('PIN Admin Salah! (Masukkan PIN Anda)');
+      setAdminPinError('PIN Admin Salah!');
     }
   };
 
