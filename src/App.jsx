@@ -43,7 +43,7 @@ const INITIAL_PRODUCTS = [
 ◆ Kesalahan redeem akibat kelalaian pengguna tidak termasuk garansi.
 ◆ Dengan melakukan pembelian, pembeli dianggap telah membaca, memahami, dan menyetujui seluruh S&K yang berlaku.
 
-╰─❖ 𝗧𝗲𝗿𝗶𝗺𝗮 𝗸𝗮𝘀𝗶𝗵 𝘁𝗲𝗹𝗮𝗵 𝗼𝗿𝗱𝗲𝗿. 💙`
+╰─❖ 𝗧𝗲𝗿𝗶𝗺𝗮 𝗸𝗮𝘀𝗶𝗵 𝘁𝗲𝗹𝗮𝗵 𝗼𝗿𝗱𝗲𝗿. 💙',
     ],
     features: ['Nikmati kemudahan dengan AI dalam sehari - hari mu']
   },
