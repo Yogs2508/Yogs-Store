@@ -8,7 +8,7 @@ const INITIAL_PRODUCTS = [
     tag: 'Meeting VIP',
     tagColor: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
     iconBg: 'from-blue-600 to-sky-700',
-    image: 'https://www.google.com/imgres?q=logo%20zoom%20pro&imgurl=https%3A%2F%2Fmedia.karousell.com%2Fmedia%2Fphotos%2Fproducts%2F2023%2F7%2F16%2Fzoom_pro_1689480475_c6ad1f95.jpg&imgrefurl=https%3A%2F%2Fwww.carousell.sg%2Fp%2Fzoom-pro-gift-card-1243316323%2F%3Fsrsltid%3DAU7gw4VpG464Aoj1qkXexgruc8ObUxUjUYEWGq0-HflNjxD7fkoQAnbM&docid=zhjz3cowMt_EKM&tbnid=9kMh9rGsROYj_M&vet=12ahUKEwj7357t1v-WAxWUkOEIHdFkAjYQnPAOegUIkAEQAA..i&w=800&h=800&hcb=2&itg=1&ved=2ahUKEwj7357t1v-WAxWUkOEIHdFkAjYQnPAOegUIkAEQAA',
+    image: 'https://www.google.com/imgres?q=logo%20zoom%20pro&imgurl=https%3A%2F%2Fwww.ryans.com%2Fstorage%2Fproducts%2Fmain%2Fzoom-meeting-pro-1-month-11744371595.webp&imgrefurl=https%3A%2F%2Fwww.ryans.com%2Fzoom-meeting-pro-1-month-subscription%3Fsrsltid%3DAU7gw4Ud4FHwfzY-6S-sJh6tjzd4fuYuc4R8n59JdUCEe0Mnar4ifH1K&docid=YBctfESjuJGwWM&tbnid=n-E1SQ-G53RDWM&vet=12ahUKEwj7357t1v-WAxWUkOEIHdFkAjYQnPAOegUIiwEQAA..i&w=900&h=900&hcb=2&ved=2ahUKEwj7357t1v-WAxWUkOEIHdFkAjYQnPAOegUIiwEQAA',
     description: 'Meeting online tanpa batas durasi 40 menit, kapasitas 100 peserta, cloud recording, dan audio-video kualitas HD.',
     rating: '4.9',
     soldCount: '310+',
