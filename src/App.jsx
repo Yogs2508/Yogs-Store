@@ -2,22 +2,22 @@ import React, { useState } from 'react';
 
 const INITIAL_PRODUCTS = [
   {
-    id: 'netflix',
-    name: 'Netflix Premium 4K UHD',
-    category: 'streaming',
+    id: 'Gemini Pro',
+    name: 'Gemini Pro',
+    category: 'AI',
     tag: 'Terlaris',
     tagColor: 'bg-red-500/10 text-red-400 border-red-500/20',
     iconBg: 'from-red-600 to-rose-700',
-    image: 'https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=120&auto=format&fit=crop&q=80',
-    description: 'Nonton ribuan film & series resolusi Ultra HD 4K tanpa jeda iklan. Akun legal dan full garansi.',
+    image: 'https://images.bisnis.com/posts/2025/09/08/1909198/gemini_1757308941.jpg',
+    description: 'AI Gemini Pro',
     rating: '4.9',
-    soldCount: '1.4k+',
+    soldCount: '0',
     variants: [
-      { id: 'nf-sh-1m', name: '1 Bulan Sharing (1 Profil)', price: 28000, duration: '1 Bulan', type: 'Sharing' },
-      { id: 'nf-sh-3m', name: '3 Bulan Sharing (Hemat)', price: 79000, duration: '3 Bulan', type: 'Sharing' },
-      { id: 'nf-pv-1m', name: '1 Bulan Private (5 Profil)', price: 165000, duration: '1 Bulan', type: 'Private' },
+      { id: 'nf-sh-1m', name: '18 Bulan ', price: 25000, duration: '18 Bulan', type: 'Private' },
+      { id: 'nf-sh-3m', name: '1 Tahun', price: 20000, duration: '1 Tahun', type: 'Private' },
+      { id: 'nf-pv-1m', name: '3 Bulan ', price: 13000, duration: '3 Bulan', type: 'Private' },
     ],
-    features: ['Kualitas Ultra HD 4K & Audio Spasial', 'Garansi Replace jika kendala', 'Bisa di HP, Laptop, Tablet & Smart TV']
+    features: ['Nikmati kemudahan dengan AI dalam sehari - hari mu']
   },
   {
     id: 'spotify',
