@@ -71,6 +71,91 @@ const INITIAL_PRODUCTS = [
     features: ['Nikmati kemudahan dengan AI dalam sehari - hari mu', 'Konteks token besar & respon cepat', 'Garansi aktif sesuai durasi']
   },
   {
+    id: 'capcut-pro',
+    name: 'CapCut Pro Video Editor',
+    category: 'desain',
+    tag: 'Trending',
+    tagColor: 'bg-violet-500/10 text-violet-400 border-violet-500/20',
+    iconBg: 'from-violet-600 to-purple-800',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxhmgpNacIt-LMzLx-2gmklABTYApW-SUjfgnpDxjw0w&s=10',
+    description: 'Edit video tanpa watermark, akses seluruh efek filter VIP, auto caption cerdas, dan ekspor kualitas tinggi 4K 60FPS.',
+    rating: '4.9',
+    soldCount: '750+',
+    variants: [
+      {
+        id: 'cp-pv-7d',
+        name: 'Private 7 Hari',
+        price: 7500,
+        duration: '7 Hari',
+        type: 'Private',
+        stokHabis: false,
+        deskripsi: [
+          'Akun Private',
+          'Bergaransi 6day',
+          'Stok terbatas',
+          'Bisa naik kapan saja',
+          'Buy now sekarang'
+        ],
+        snk: `✦ 𝗖𝗔𝗣𝗖𝗨𝗧 𝗣𝗥𝗢 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 • 𝟳 𝗗𝗔𝗬
+◈ 𝗚𝗮𝗿𝗮𝗻𝘀𝗶 𝟲 𝗗𝗮𝘆
+
+╭─〔 📖 𝗦&𝗞 〕
+Harap membaca ketentuan berikut sebelum login agar akun tetap aman dan garansi tetap berlaku.
+
+╭─〔 🔐 𝗖𝗮𝗿𝗮 𝗟𝗼𝗴𝗶𝗻 〕
+➊ Sebelum login, wajib hapus aplikasi CapCut yang lama.
+➋ Install dan gunakan CapCut versi terbaru.
+➌ Login hanya menggunakan email yang diberikan.
+➍ Jika login melalui PC, gunakan fitur Scan QR.
+
+╭─〔 📌 𝗞𝗲𝘁𝗲𝗻𝘁𝘂𝗮𝗻 〕
+◆ Garansi berlaku apabila akun mengalami Backfree (BF).
+◆ Garansi juga berlaku apabila status Pro hilang atau kembali menjadi Free sebelum masa aktif berakhir.
+◆ Garansi tidak berlaku apabila kendala disebabkan oleh kesalahan pengguna, seperti akun disable, limit login, atau share akun kepada pihak lain.
+
+╰─❖ 𝗧𝗲𝗿𝗶𝗺𝗮 𝗸𝗮𝘀𝗶𝗵 𝘁𝗲𝗹𝗮𝗵 𝗼𝗿𝗱𝗲𝗿💙
+Selamat berkarya dan semoga pengalaman anda menggunakan CapCut Pro semakin maksimal. ✨`
+      },
+      {
+        id: 'cp-pv-30d',
+        name: 'Private 30 Hari',
+        price: 30000,
+        duration: '30 Hari',
+        type: 'Private',
+        stokHabis: false,
+        deskripsi: [
+          'Akun Private & Bergaransi',
+          'Durasi Langsung 1 Bulan',
+          'Stok terbatas',
+          'Full Garansi',
+          'Harga bisa naik kapan saja',
+          'Buy now sekarang'
+        ],
+        snk: `✦ 𝗖𝗔𝗣𝗖𝗨𝗧 𝗣𝗥𝗢 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 • 𝟭 𝗕𝗨𝗟𝗔𝗡
+
+╭─〔 📖 𝗦&𝗞 〕
+Harap membaca ketentuan berikut sebelum login agar akun tetap aman dan garansi tetap berlaku.
+
+╭─〔 🔐 𝗖𝗮𝗿𝗮 𝗟𝗼𝗴𝗶𝗻 〕
+➊ Sebelum login, wajib hapus aplikasi CapCut yang lama.
+➋ Gunakan CapCut versi terbaru.
+➌ Login hanya menggunakan email yang diberikan.
+➍ Jika login melalui PC, gunakan fitur Scan QR.
+
+╭─〔 📌 𝗞𝗲𝘁𝗲𝗻𝘁𝘂𝗮𝗻 〕
+◆ Masa aktif 𝟮𝟴–𝟯𝟬 𝗵𝗮𝗿𝗶 dihitung sebagai 𝟭 𝗯𝘂𝗹𝗮𝗻, mengikuti sistem penyedia.
+◆ Garansi berlaku apabila akun mengalami Backfree (BF).
+◆ Garansi juga berlaku apabila status Pro hilang atau kembali menjadi Free sebelum masa aktif berakhir.
+◆ Garansi tidak berlaku apabila kendala disebabkan oleh kesalahan pengguna, seperti akun disable, limit login, atau share akun kepada pihak lain.
+◆ Jika mengalami kendala, segera hubungi Admin.
+
+╰─❖ 𝗧𝗲𝗿𝗶𝗺𝗮 𝗸𝗮𝘀𝗶𝗵 𝘁𝗲𝗹𝗮𝗵 𝗼𝗿𝗱𝗲𝗿 💙
+Selamat berkarya dan semoga pengalaman anda menggunakan CapCut Pro semakin maksimal. ✨`
+      }
+    ],
+    features: ['Ekspor 4K 60FPS tanpa watermark', 'Semua transisi & efek VIP terbuka', 'Bisa login HP & PC']
+  },
+  {
     id: 'spotify',
     name: 'Spotify Premium Individual',
     category: 'musik',
@@ -239,75 +324,40 @@ const INITIAL_PRODUCTS = [
       },
     ],
     features: ['Akses prioritas tanpa limit antrean', 'Generate gambar DALL-E 3', 'Analisis file spreadsheet & PDF']
-  },
-  {
-    id: 'capcut',
-    name: 'CapCut Pro Video Editor',
-    category: 'desain',
-    tag: 'Trending',
-    tagColor: 'bg-violet-500/10 text-violet-400 border-violet-500/20',
-    iconBg: 'from-violet-600 to-purple-800',
-    image: 'https://images.unsplash.com/photo-1536240478700-b869070f9279?w=120&auto=format&fit=crop&q=80',
-    description: 'Edit video profesional tanpa watermark, efek filter pro, auto caption cerdas, dan cloud storage.',
-    rating: '4.8',
-    soldCount: '750+',
-    variants: [
-      {
-        id: 'cp-sh-1m',
-        name: '1 Bulan Sharing Device',
-        price: 18000,
-        duration: '1 Bulan',
-        type: 'Sharing',
-        stokHabis: false,
-        deskripsi: ['Ekspor video 4K tanpa watermark', 'Akses seluruh filter dan transisi VIP', 'Bisa di HP atau PC'],
-        snk: 'Maksimal login di 1 perangkat per pesanan.'
-      },
-      {
-        id: 'cp-pv-1y',
-        name: '1 Tahun Full Garansi',
-        price: 125000,
-        duration: '1 Tahun',
-        type: 'Private',
-        stokHabis: false,
-        deskripsi: ['Akun private durasi 365 hari', 'Cloud storage 100GB aktif', 'Bisa login multiple device'],
-        snk: 'Full support penggantian akun jika terjadi kendala login mendadak.'
-      },
-    ],
-    features: ['Bebas ekspor 4K 60FPS tanpa watermark', 'Semua transisi & efek VIP terbuka', 'Bisa di HP (Android/iOS) & PC']
   }
 ];
 
 const INITIAL_ORDERS = [
   {
     id: 'YOG-849102',
-    productName: 'Gemini Pro Advanced AI (Head 18 Bulan)',
-    variantId: 'gem-18m',
-    price: 10800,
+    productName: 'CapCut Pro Video Editor (Private 30 Hari)',
+    variantId: 'cp-pv-30d',
+    price: 30800,
     paymentMethod: 'QRIS Realtime',
     whatsapp: '081234567890',
     email: 'alex.buyer@gmail.com',
     status: 'MENUNGGU BAYAR',
-    createdAt: '2026-09-20 18:32',
+    createdAt: '2026-09-21 19:40',
     accountDetails: {
-      emailLogin: 'gemini.vip01@premiumzone.net',
+      emailLogin: 'capcut.pro01@premiumzone.net',
       passwordLogin: 'YogsPass#9920',
-      profilePin: 'Link Redeem: bit.ly/yogs-gem-18m'
+      profilePin: 'Scan QR Code / Login Email'
     }
   },
   {
     id: 'YOG-291048',
-    productName: 'Spotify Premium Individual (3 Bulan Plan Invite)',
-    variantId: 'sp-ind-3m',
-    price: 38800,
+    productName: 'Gemini Pro Advanced AI (Head 18 Bulan)',
+    variantId: 'gem-18m',
+    price: 10800,
     paymentMethod: 'BCA Virtual Account',
     whatsapp: '085799201923',
-    email: 'customer.spo@gmail.com',
+    email: 'customer.ai@gmail.com',
     status: 'MENUNGGU BAYAR',
-    createdAt: '2026-09-20 23:45',
+    createdAt: '2026-09-21 20:05',
     accountDetails: {
-      emailLogin: 'spotify-family-yogs91@mail.com',
-      passwordLogin: 'SpoSecure#4412',
-      profilePin: 'Invite Link dikirim via WA'
+      emailLogin: 'gemini.vip01@premiumzone.net',
+      passwordLogin: 'YogsPass#4412',
+      profilePin: 'Link Redeem: bit.ly/yogs-gem-18m'
     }
   }
 ];
@@ -837,7 +887,7 @@ export default function App() {
                 Nikmati Hiburan <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">Premium Murah & Legal</span>
               </h1>
               <p className="text-slate-400 text-sm sm:text-base max-w-xl mx-auto mt-3">
-                Pusat langganan Gemini Advanced AI, Spotify, Canva Pro, YouTube tanpa ribet. Akun dikirim instan langsung setelah pembayaran otomatis QRIS.
+                Pusat langganan Gemini Advanced AI, CapCut Pro, Spotify, Canva Pro tanpa ribet. Akun dikirim instan langsung setelah pembayaran otomatis QRIS.
               </p>
 
               <div className="flex flex-wrap justify-center gap-2 mt-8">
