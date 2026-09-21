@@ -2,6 +2,93 @@ import React, { useState } from 'react';
 
 const INITIAL_PRODUCTS = [
   {
+    id: 'canva-pro',
+    name: 'Canva Pro Famhead Designer',
+    category: 'desain',
+    tag: 'Creator Choice',
+    tagColor: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20',
+    iconBg: 'from-cyan-600 to-blue-700',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6XDt9Bji_VcQQPX46XezBZUT7bTDCo28H4MPMvpnUDQ&s=10',
+    description: 'Akses 100+ juta foto, font premium, elemen grafis VIP, serta fitur Magic Eraser dan background remover instan.',
+    rating: '5.0',
+    soldCount: '1.2k+',
+    variants: [
+      {
+        id: 'cnv-hd-lf',
+        name: 'Famhead Lifetime',
+        price: 100000,
+        duration: 'Lifetime',
+        type: 'Education Head',
+        stokHabis: false,
+        deskripsi: [
+          'Famhead | Lifetime',
+          'Bisa invite 500 member.',
+          'Garansi Login.',
+          'Plan Education.',
+          'Stok Terbatas.',
+          'Buy Now Sekarang.'
+        ],
+        snk: `▣ 𝗦𝗬𝗔𝗥𝗔𝗧 & 𝗞𝗘𝗧𝗘𝗡𝗧𝗨𝗔𝗡 𝗖𝗔𝗡𝗩𝗔 𝗘𝗗𝗨𝗖𝗔𝗧𝗜𝗢𝗡 (𝗛𝗘𝗔𝗗)
+✦ Garansi login max 6 jam setelah pembelian
+
+✦ 𝐊𝐞𝐭𝐞𝐧𝐭𝐮𝐚𝐧 𝐏𝐫𝐨𝐝𝐮𝐤
+➤ Gunakan link undangan untuk mengundang member.
+➤ Jangan invite melalui email, gunakan metode invite via link.
+➤ Pastikan link hanya diberikan kepada member yang benar.
+➤ Simpan data akun dengan baik dan gunakan sesuai kebutuhan.
+
+✦ 𝐂𝐚𝐭𝐚𝐭𝐚𝐧 𝐏𝐞𝐧𝐭𝐢𝐧𝐠
+➤ Invite melalui email maksimal 10 member.
+➤ Invite melalui link lebih praktis dan dapat digunakan untuk lebih banyak member.
+➤ Jangan membagikan akses akun kepada pihak lain.
+
+📌 WAJIB DIBACA (CANVA LIFETIME)
+➤ Akun dapat digunakan selama masih aktif (hingga terkena KOID/BF), tanpa perlu pindah team.
+➤ Jangan mengubah nama team maupun status guru pada profil. Jika diubah, garansi hangus.
+➤ Login menggunakan email.
+➤ Akun Head dapat mengundang hingga ±500 member.
+➤ Invite member dilakukan secara manual (bukan melalui link).
+➤ Disarankan menambahkan Email Pemulihan / V2L sebagai antisipasi jika domain dinonaktifkan.
+➤ Tidak ada garansi apabila domain dinonaktifkan massal oleh Canva.
+➤ Garansi hanya berlaku untuk BF/Pro hilang dalam 6jam setelah pembelian atau 1x replace.
+➤ Admin berhak menolak garansi apabila syarat & ketentuan di atas dilanggar.
+
+💌 Terima kasih telah melakukan pemesanan.
+Mohon membaca dan mengikuti seluruh ketentuan di atas agar akun dapat digunakan dengan lancar serta garansi tetap berlaku.`
+      },
+      {
+        id: 'cnv-hd-1m',
+        name: 'Famhead 1 Bulan',
+        price: 7500,
+        duration: '1 Bulan',
+        type: 'Education Head',
+        stokHabis: false,
+        deskripsi: [
+          'Famhead | 1 Bulan',
+          'Bisa invite 100 member.',
+          'Fullgaransi',
+          'Harga Bisa Naik Kapan saja.',
+          'Stok Terbatas.',
+          'Buy Now Sekarang.'
+        ],
+        snk: `✦ 𝗖𝗔𝗡𝗩𝗔 𝗛𝗘𝗔𝗗 • 𝟭 𝗕𝘂𝗹𝗮𝗻
+◈ Garansi login maksimal 𝟲 𝗷𝗮𝗺 setelah pembelian.
+◈ Password Canva: masuk123
+
+╭─〔 📖 𝗦&𝗞 〕
+Harap membaca ketentuan berikut agar akun tetap aman dan garansi tetap berlaku.
+
+╭─〔 🔐 𝗔𝗸𝘀𝗲𝘀 𝗖𝗼𝗱𝗲 〕
+◆ Link akses verifikasi:
+hotmail.com
+
+╰─❖ 𝗧𝗲𝗿𝗶𝗺𝗮 𝗸𝗮𝘀𝗶𝗵 𝘁𝗲𝗹𝗮𝗵 𝗼𝗿𝗱𝗲𝗿 💙
+Semoga akun dapat digunakan dengan lancar.`
+      }
+    ],
+    features: ['Hapus latar belakang foto 1 klik', 'Ribuan template & font premium', 'Akses Akun Head Invite Member']
+  },
+  {
     id: 'gemini-pro',
     name: 'Gemini Pro Advanced AI',
     category: 'ai',
@@ -246,51 +333,6 @@ Selamat berkarya dan semoga pengalaman anda menggunakan CapCut Pro semakin maksi
     features: ['Tanpa gangguan iklan sama sekali', 'Putar di latar belakang & layar mati', 'Termasuk YouTube Music Premium']
   },
   {
-    id: 'canva',
-    name: 'Canva Pro Designer',
-    category: 'desain',
-    tag: 'Creator Choice',
-    tagColor: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20',
-    iconBg: 'from-cyan-600 to-blue-700',
-    image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=120&auto=format&fit=crop&q=80',
-    description: 'Akses 100+ juta foto, video, font premium, dan fitur Magic Eraser / Background Remover instan.',
-    rating: '5.0',
-    soldCount: '1.2k+',
-    variants: [
-      {
-        id: 'cnv-tm-1m',
-        name: '1 Bulan Team Designer',
-        price: 12000,
-        duration: '1 Bulan',
-        type: 'Invite Team',
-        stokHabis: false,
-        deskripsi: ['Bisa pakai email pribadi kamu', 'Fitur Magic Eraser terbuka', 'Download transparan PNG'],
-        snk: 'Cukup cantumkan email aktif saat checkout, link join tim akan otomatis dikirim.'
-      },
-      {
-        id: 'cnv-tm-1y',
-        name: '1 Tahun Garansi Penuh',
-        price: 35000,
-        duration: '1 Tahun',
-        type: 'Member Invite',
-        stokHabis: false,
-        deskripsi: ['Masa aktif 365 hari', 'Full replacement jika tim bermasalah'],
-        snk: 'Desain pribadi di folder tim tetap privat dan tidak bisa dilihat anggota lain.'
-      },
-      {
-        id: 'cnv-edu-lf',
-        name: 'Lifetime Edu/Designer Plan',
-        price: 55000,
-        duration: 'Permanen',
-        type: 'Lifelong',
-        stokHabis: false,
-        deskripsi: ['Sekali bayar aktif selamanya', 'Akses jutaan template premium'],
-        snk: 'Garansi pemulihan 1 tahun pertama sejak tanggal transaksi.'
-      },
-    ],
-    features: ['Hapus latar belakang foto 1 klik', 'Ribuan template & font premium', 'Bisa pakai email pribadi kamu']
-  },
-  {
     id: 'chatgpt',
     name: 'ChatGPT Plus (GPT-4o)',
     category: 'ai',
@@ -330,34 +372,34 @@ Selamat berkarya dan semoga pengalaman anda menggunakan CapCut Pro semakin maksi
 const INITIAL_ORDERS = [
   {
     id: 'YOG-849102',
-    productName: 'CapCut Pro Video Editor (Private 30 Hari)',
-    variantId: 'cp-pv-30d',
-    price: 30800,
+    productName: 'Canva Pro Famhead Designer (Famhead Lifetime)',
+    variantId: 'cnv-hd-lf',
+    price: 100800,
     paymentMethod: 'QRIS Realtime',
     whatsapp: '081234567890',
     email: 'alex.buyer@gmail.com',
     status: 'MENUNGGU BAYAR',
-    createdAt: '2026-09-21 19:40',
+    createdAt: '2026-09-21 20:20',
     accountDetails: {
-      emailLogin: 'capcut.pro01@premiumzone.net',
-      passwordLogin: 'YogsPass#9920',
-      profilePin: 'Scan QR Code / Login Email'
+      emailLogin: 'canva.head01@premiumzone.net',
+      passwordLogin: 'masuk123',
+      profilePin: 'Akses hotmail.com untuk verifikasi'
     }
   },
   {
     id: 'YOG-291048',
-    productName: 'Gemini Pro Advanced AI (Head 18 Bulan)',
-    variantId: 'gem-18m',
-    price: 10800,
+    productName: 'CapCut Pro Video Editor (Private 30 Hari)',
+    variantId: 'cp-pv-30d',
+    price: 30800,
     paymentMethod: 'BCA Virtual Account',
     whatsapp: '085799201923',
-    email: 'customer.ai@gmail.com',
+    email: 'customer.edit@gmail.com',
     status: 'MENUNGGU BAYAR',
-    createdAt: '2026-09-21 20:05',
+    createdAt: '2026-09-21 20:25',
     accountDetails: {
-      emailLogin: 'gemini.vip01@premiumzone.net',
-      passwordLogin: 'YogsPass#4412',
-      profilePin: 'Link Redeem: bit.ly/yogs-gem-18m'
+      emailLogin: 'capcut.pro01@premiumzone.net',
+      passwordLogin: 'YogsPass#9920',
+      profilePin: 'Scan QR Code / Login Email'
     }
   }
 ];
@@ -768,7 +810,7 @@ export default function App() {
                         value={ord.accountDetails.profilePin}
                         onChange={(e) => handleUpdateAccountDetails(ord.id, 'profilePin', e.target.value)}
                         className="w-full bg-slate-900 border border-slate-800 text-purple-200 px-2 py-1 rounded text-xs"
-                        placeholder="PIN Profil / Link Redeem"
+                        placeholder="PIN Profil / Link Akses Verifikasi"
                       />
                     </div>
                   </div>
@@ -887,7 +929,7 @@ export default function App() {
                 Nikmati Hiburan <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">Premium Murah & Legal</span>
               </h1>
               <p className="text-slate-400 text-sm sm:text-base max-w-xl mx-auto mt-3">
-                Pusat langganan Gemini Advanced AI, CapCut Pro, Spotify, Canva Pro tanpa ribet. Akun dikirim instan langsung setelah pembayaran otomatis QRIS.
+                Pusat langganan Canva Pro Famhead, Gemini Advanced AI, CapCut Pro, Spotify tanpa ribet. Akun dikirim instan langsung setelah pembayaran otomatis QRIS.
               </p>
 
               <div className="flex flex-wrap justify-center gap-2 mt-8">
@@ -1293,7 +1335,7 @@ export default function App() {
                     </div>
                   </div>
                   <div>
-                    <span className="text-slate-500 block text-[10px]">PROFIL / LINK REDEEM:</span>
+                    <span className="text-slate-500 block text-[10px]">PROFIL / LINK VERIFIKASI:</span>
                     <span className="font-medium text-slate-200">{currentInvoice.accountDetails.profilePin}</span>
                   </div>
                 </div>
