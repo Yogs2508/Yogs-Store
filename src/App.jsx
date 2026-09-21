@@ -251,12 +251,11 @@ export default function App() {
       email: customerEmail,
       status: 'MENUNGGU BAYAR',
       createdAt: 'Baru saja',
-      accountDetails: {
-        emailLogin: `yogs.${activeProduct.id}${Math.floor(100 + Math.random() * 900)}@premiumzone.net`,
-        passwordLogin: `YogsStore#${Math.floor(1000 + Math.random() * 9000)}`,
-        profilePin: selectedVariant.type === 'Private' ? 'Private Account (Full Akses)' : `Profil ${Math.floor(1 + Math.random() * 4)} (PIN: ${Math.floor(1000 + Math.random() * 9000)})`
+     accountDetails: {
+        emailLogin: 'yogs.' + activeProduct.id + Math.floor(100 + Math.random() * 900) + '@premiumzone.net',
+        passwordLogin: 'YogsStore#' + Math.floor(1000 + Math.random() * 9000),
+        profilePin: selectedVariant.type === 'Private' ? 'Private Account (Full Akses)' : 'Profil ' + Math.floor(1 + Math.random() * 4) + ' (PIN: ' + Math.floor(1000 + Math.random() * 9000) + ')'
       }
-    };
 
     setOrders([newOrder, ...orders]);
     setCurrentInvoice(newOrder);
