@@ -187,6 +187,7 @@ export default function App() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [activeProduct, setActiveProduct] = useState(null);
   const [selectedVariant, setSelectedVariant] = useState(null);
+  const [activeTab, setActiveTab] = useState('deskripsi');
   const [customerPhone, setCustomerPhone] = useState('');
   const [customerEmail, setCustomerEmail] = useState('');
   const [selectedPayment, setSelectedPayment] = useState('qris');
