@@ -13,9 +13,37 @@ const INITIAL_PRODUCTS = [
     rating: '4.9',
     soldCount: '0',
     variants: [
-      { id: 'nf-sh-1m', name: '18 Bulan ', price: 25000, duration: '18 Bulan', type: 'Private' },
-      { id: 'nf-sh-3m', name: '1 Tahun', price: 20000, duration: '1 Tahun', type: 'Private' },
-      { id: 'nf-pv-1m', name: '3 Bulan ', price: 13000, duration: '3 Bulan', type: 'Private' },
+      'Link Rendem via Jio',
+    'Akun Buyyer, Tinggal Redeem,',
+    'Bisa invite 5 member',
+    'Bergaransi 1x24jam',
+    'Stok Terbatas.'
+  ],
+  snk: `✦ 𝗟𝗜𝗡𝗞 𝗥𝗘𝗗𝗘𝗘𝗠 • 𝟭𝟴 𝗕𝗨𝗟𝗔𝗡
+
+╭─〔 📖 𝗜𝗻𝗳𝗼 〕
+◆ Link redeem telah diperiksa dulu sebelum dikirim ke stok bot.
+◆ Pastikan membaca detail produk sebelum melakukan redeem.
+◆ Setelah pembelian dan link berhasil digunakan, tidak dapat dilakukan refund atau replacement.
+
+╭─〔 🚀 𝗖𝗮𝗿𝗮 𝗔𝗸𝘁𝗶𝘃𝗮𝘀𝗶 〕
+➊ Pilih akun Google yang ingin diaktifkan melalui Google Chrome.
+➋ Buka 𝗧𝗮𝗯 𝗕𝗮𝗿𝘂.
+➌ Paste link redeem yang diberikan.
+➍ Klik 𝗔𝗸𝘁𝗶𝗳𝗸𝗮𝗻 / Activate.
+➎ Selesai — aktivasi dapat dilakukan tanpa menambahkan metode pembayaran.
+
+╭─〔 📌 𝗞𝗲𝘁𝗲𝗻𝘁𝘂𝗮𝗻 〕
+◆ Garansi link error berlaku maksimal 𝟮𝟰 𝗷𝗮𝗺 setelah pembelian.
+◆ Link redeem aktif sekitar 𝟯–𝟱 𝗵𝗮𝗿𝗶.
+◆ Disarankan segera melakukan redeem agar link tidak expired.
+◆ Pastikan proses redeem dilakukan dengan benar sesuai panduan.
+
+╭─〔 ⚠️ 𝗣𝗲𝗻𝘁𝗶𝗻𝗴 〕
+◆ Kesalahan redeem akibat kelalaian pengguna tidak termasuk garansi.
+◆ Dengan melakukan pembelian, pembeli dianggap telah membaca, memahami, dan menyetujui seluruh S&K yang berlaku.
+
+╰─❖ 𝗧𝗲𝗿𝗶𝗺𝗮 𝗸𝗮𝘀𝗶𝗵 𝘁𝗲𝗹𝗮𝗵 𝗼𝗿𝗱𝗲𝗿. 💙`
     ],
     features: ['Nikmati kemudahan dengan AI dalam sehari - hari mu']
   },
