@@ -243,7 +243,7 @@ export default function App() {
 
     const newOrder = {
       id: randomId,
-      productName: `${activeProduct.name} (${selectedVariant.name})`,
+      productName: productName: activeProduct.name + ' (' + selectedVariant.name + ')',
       variantId: selectedVariant.id,
       price: grandTotal,
       paymentMethod: selectedPayment === 'qris' ? 'QRIS Realtime' : selectedPayment.toUpperCase() + ' Virtual Account',
