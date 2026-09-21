@@ -2,6 +2,109 @@ import React, { useState } from 'react';
 
 const INITIAL_PRODUCTS = [
   {
+    id: 'zoom-pro',
+    name: 'Zoom Pro Meeting',
+    category: 'streaming',
+    tag: 'Meeting VIP',
+    tagColor: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
+    iconBg: 'from-blue-600 to-sky-700',
+    image: 'https://images.unsplash.com/photo-1616469829941-c7200edec809?w=120&auto=format&fit=crop&q=80',
+    description: 'Meeting online tanpa batas durasi 40 menit, kapasitas 100 peserta, cloud recording, dan audio-video kualitas HD.',
+    rating: '4.9',
+    soldCount: '310+',
+    variants: [
+      {
+        id: 'zm-pv-14d',
+        name: 'Private 14 Hari',
+        price: 10000,
+        duration: '14 Hari',
+        type: 'Private',
+        stokHabis: false,
+        deskripsi: [
+          'Private Akun',
+          '100 Peserta',
+          'Full Garansi'
+        ],
+        snk: `✦ 𝗭𝗢𝗢𝗠 𝗣𝗥𝗢 • 𝟭𝟰 𝗛𝗔𝗥𝗜
+◈ 𝗚𝗮𝗿𝗮𝗻𝘀𝗶 𝟭𝟬 𝗛𝗮𝗿𝗶
+
+╭─〔 📖 𝗦&𝗞 〕
+Harap membaca ketentuan berikut agar akun tetap aman dan garansi tetap berlaku.
+
+╭─〔 🛡 𝗚𝗮𝗿𝗮𝗻𝘀𝗶 〕
+◆ Garansi Backfree / Premium Hilang berlaku selama 𝟭𝟬 𝗵𝗮𝗿𝗶 sejak akun diterima.
+
+╭─〔 📌 𝗞𝗲𝘁𝗲𝗻𝘁𝘂𝗮𝗻 〕
+◆ Wajib login segera setelah akun diterima.
+◆ Jika muncul verifikasi akun, pilih 𝗦𝗸𝗶𝗽 (𝗟𝗲𝘄𝗮𝘁𝗶).
+◆ Maksimal 𝟭𝟬𝟬 𝗽𝗲𝘀𝗲𝗿𝘁𝗮 dalam satu meeting.
+
+╭─〔 🔐 𝗔𝗸𝘀𝗲𝘀 𝗘𝗺𝗮𝗶𝗹 〕
+◆ Akses email dan kode verifikasi melalui:
+https://sengare.art/check-inbox
+
+╭─〔 🎥 𝗣𝗮𝗻𝗱𝘂𝗮𝗻 〕
+◆ Jika diminta verifikasi saat login, pilih 𝗦𝗸𝗶𝗽 (𝗟𝗲𝘄𝗮𝘁𝗶).
+◆ 𝗖𝗹𝗼𝘂𝗱 𝗥𝗲𝗰𝗼𝗿𝗱𝗶𝗻𝗴 dapat diakses melalui:
+https://zoom.us/recording
+
+◆ Jika menggunakan 𝗟𝗼𝗰𝗮𝗹 𝗥𝗲𝗰𝗼𝗿𝗱𝗶𝗻𝗴, hasil rekaman tersimpan di folder Documents pada perangkat.
+
+╭─〔 ⚠️ 𝗣𝗲𝗻𝘁𝗶𝗻𝗴 〕
+◆ Pastikan email dan password yang dimasukkan sudah benar.
+◆ Simpan informasi akun dengan baik dan jangan dibagikan kepada pihak lain.
+
+╰─❖ 𝗧𝗲𝗿𝗶𝗺𝗮 𝗸𝗮𝘀𝗶𝗵 𝘁𝗲𝗹𝗮𝗵 𝗼𝗿𝗱𝗲𝗿 💙
+Gunakan akun dengan bijak agar tetap aman dan nyaman digunakan.`
+      },
+      {
+        id: 'zm-pv-7d',
+        name: 'Private 7 Hari',
+        price: 6000,
+        duration: '7 Hari',
+        type: 'Private',
+        stokHabis: false,
+        deskripsi: [
+          'Private Akun',
+          '100 Peserta',
+          'Full Garansi'
+        ],
+        snk: `✦ 𝗭𝗢𝗢𝗠 𝗣𝗥𝗢 • 𝟳 𝗛𝗔𝗥𝗜
+◈ 𝗚𝗮𝗿𝗮𝗻𝘀𝗶 𝟳 𝗛𝗮𝗿𝗶
+
+╭─〔 📖 𝗦&𝗞 〕
+Harap membaca ketentuan berikut agar akun tetap aman dan garansi tetap berlaku.
+
+╭─〔 🛡 𝗚𝗮𝗿𝗮𝗻𝘀𝗶 〕
+◆ Garansi Backfree / Premium Hilang berlaku selama 𝟭𝟬 𝗵𝗮𝗿𝗶 sejak akun diterima.
+
+╭─〔 📌 𝗞𝗲𝘁𝗲𝗻𝘁𝘂𝗮𝗻 〕
+◆ Wajib login segera setelah akun diterima.
+◆ Jika muncul verifikasi akun, pilih 𝗦𝗸𝗶𝗽 (𝗟𝗲𝘄𝗮𝘁𝗶).
+◆ Maksimal 𝟭𝟬𝟬 𝗽𝗲𝘀𝗲𝗿𝘁𝗮 dalam satu meeting.
+
+╭─〔 🔐 𝗔𝗸𝘀𝗲𝘀 𝗘𝗺𝗮𝗶𝗹 〕
+◆ Akses email dan kode verifikasi melalui:
+https://sengare.art/check-inbox
+
+╭─〔 🎥 𝗣𝗮𝗻𝗱𝘂𝗮𝗻 〕
+◆ Jika diminta verifikasi saat login, pilih 𝗦𝗸𝗶𝗽 (𝗟𝗲𝘄𝗮𝘁𝗶).
+◆ 𝗖𝗹𝗼𝘂𝗱 𝗥𝗲𝗰𝗼𝗿𝗱𝗶𝗻𝗴 dapat diakses melalui:
+https://zoom.us/recording
+
+◆ Jika menggunakan 𝗟𝗼𝗰𝗮𝗹 𝗥𝗲𝗰𝗼𝗿𝗱𝗶𝗻𝗴, hasil rekaman tersimpan di folder Documents pada perangkat.
+
+╭─〔 ⚠️ 𝗣𝗲𝗻𝘁𝗶𝗻𝗴 〕
+◆ Pastikan email dan password yang dimasukkan sudah benar.
+◆ Simpan informasi akun dengan baik dan jangan dibagikan kepada pihak lain.
+
+╰─❖ 𝗧𝗲𝗿𝗶𝗺𝗮 𝗸𝗮𝘀𝗶𝗵 𝘁𝗲𝗹𝗮𝗵 𝗼𝗿𝗱𝗲𝗿 💙
+Gunakan akun dengan bijak agar tetap aman dan nyaman digunakan.`
+      }
+    ],
+    features: ['Kapasitas hingga 100 peserta', 'Bebas meeting tanpa limit 40 menit', 'Akses Cloud & Local Recording']
+  },
+  {
     id: 'canva-pro',
     name: 'Canva Pro Famhead Designer',
     category: 'desain',
@@ -130,7 +233,7 @@ Semoga akun dapat digunakan dengan lancar.`
 
 ╭─〔 📌 𝗞𝗲𝘁𝗲𝗻𝘁𝘂𝗮𝗻 〕
 ◆ Garansi link error berlaku maksimal 𝟮𝟰 𝗷𝗮𝗺 setelah pembelian.
-◆ Link redeem aktif sekitar 𝟯–𝟱 𝗵𝗮𝗿𝗶.
+◆ Link redeem aktif sekitar 𝟯–𝟱 𝗵𝗮𝗿i.
 ◆ Disarankan segera melakukan redeem agar link tidak expired.
 ◆ Pastikan proses redeem dilakukan dengan benar sesuai panduan.
 
@@ -372,34 +475,34 @@ Selamat berkarya dan semoga pengalaman anda menggunakan CapCut Pro semakin maksi
 const INITIAL_ORDERS = [
   {
     id: 'YOG-849102',
-    productName: 'Canva Pro Famhead Designer (Famhead Lifetime)',
-    variantId: 'cnv-hd-lf',
-    price: 100800,
+    productName: 'Zoom Pro Meeting (Private 14 Hari)',
+    variantId: 'zm-pv-14d',
+    price: 10800,
     paymentMethod: 'QRIS Realtime',
     whatsapp: '081234567890',
     email: 'alex.buyer@gmail.com',
     status: 'MENUNGGU BAYAR',
-    createdAt: '2026-09-21 20:20',
+    createdAt: '2026-09-21 20:30',
     accountDetails: {
-      emailLogin: 'canva.head01@premiumzone.net',
-      passwordLogin: 'masuk123',
-      profilePin: 'Akses hotmail.com untuk verifikasi'
+      emailLogin: 'zoom.pro01@sengare.art',
+      passwordLogin: 'ZoomPass#14D',
+      profilePin: 'Akses inbox: https://sengare.art/check-inbox'
     }
   },
   {
     id: 'YOG-291048',
-    productName: 'CapCut Pro Video Editor (Private 30 Hari)',
-    variantId: 'cp-pv-30d',
-    price: 30800,
+    productName: 'Canva Pro Famhead Designer (Famhead Lifetime)',
+    variantId: 'cnv-hd-lf',
+    price: 100800,
     paymentMethod: 'BCA Virtual Account',
     whatsapp: '085799201923',
-    email: 'customer.edit@gmail.com',
+    email: 'customer.design@gmail.com',
     status: 'MENUNGGU BAYAR',
-    createdAt: '2026-09-21 20:25',
+    createdAt: '2026-09-21 20:35',
     accountDetails: {
-      emailLogin: 'capcut.pro01@premiumzone.net',
-      passwordLogin: 'YogsPass#9920',
-      profilePin: 'Scan QR Code / Login Email'
+      emailLogin: 'canva.head01@premiumzone.net',
+      passwordLogin: 'masuk123',
+      profilePin: 'Akses hotmail.com untuk verifikasi'
     }
   }
 ];
@@ -929,13 +1032,13 @@ export default function App() {
                 Nikmati Hiburan <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">Premium Murah & Legal</span>
               </h1>
               <p className="text-slate-400 text-sm sm:text-base max-w-xl mx-auto mt-3">
-                Pusat langganan Canva Pro Famhead, Gemini Advanced AI, CapCut Pro, Spotify tanpa ribet. Akun dikirim instan langsung setelah pembayaran otomatis QRIS.
+                Pusat langganan Zoom Pro, Canva Pro, Gemini AI, CapCut Pro tanpa ribet. Akun dikirim instan langsung setelah pembayaran otomatis QRIS.
               </p>
 
               <div className="flex flex-wrap justify-center gap-2 mt-8">
                 {[
                   { id: 'all', label: 'Semua Produk' },
-                  { id: 'streaming', label: 'Streaming Video' },
+                  { id: 'streaming', label: 'Streaming & Meeting' },
                   { id: 'musik', label: 'Musik' },
                   { id: 'desain', label: 'Desain & Editing' },
                   { id: 'ai', label: 'Tools AI' },
@@ -1049,7 +1152,7 @@ export default function App() {
                     onChange={(e) => setNewProdCat(e.target.value)}
                     className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-white"
                   >
-                    <option value="streaming">Streaming Video</option>
+                    <option value="streaming">Streaming & Meeting</option>
                     <option value="musik">Musik</option>
                     <option value="desain">Desain & Editing</option>
                     <option value="ai">Tools AI</option>
