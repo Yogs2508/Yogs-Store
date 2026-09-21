@@ -2,24 +2,32 @@ import React, { useState } from 'react';
 
 const INITIAL_PRODUCTS = [
   {
-    id: 'Gemini Pro',
-    name: 'Gemini Pro',
-    category: 'AI',
+    id: 'gemini-pro',
+    name: 'Gemini Pro Advanced AI',
+    category: 'ai',
     tag: 'Terlaris',
     tagColor: 'bg-red-500/10 text-red-400 border-red-500/20',
     iconBg: 'from-red-600 to-rose-700',
     image: 'https://images.bisnis.com/posts/2025/09/08/1909198/gemini_1757308941.jpg',
-    description: 'AI Gemini Pro',
+    description: 'Akses Google Gemini Advanced dengan konteks penalaran tinggi dan integrasi ekosistem Google Workspace.',
     rating: '4.9',
-    soldCount: '0',
+    soldCount: '420+',
     variants: [
-      'Link Rendem via Jio',
-    'Akun Buyyer, Tinggal Redeem,',
-    'Bisa invite 5 member',
-    'Bergaransi 1x24jam',
-    'Stok Terbatas.'
-  ],
-  snk: `✦ 𝗟𝗜𝗡𝗞 𝗥𝗘𝗗𝗘𝗘𝗠 • 𝟭𝟴 𝗕𝗨𝗟𝗔𝗡
+      {
+        id: 'gem-18m',
+        name: 'Head 18 Bulan',
+        price: 10000,
+        duration: '18 Bulan',
+        type: 'Invite Head',
+        stokHabis: false,
+        deskripsi: [
+          'Link Rendem via Jio',
+          'Akun Buyyer, Tinggal Redeem,',
+          'Bisa invite 5 member',
+          'Bergaransi 1x24jam',
+          'Stok Terbatas.'
+        ],
+        snk: `✦ 𝗟𝗜𝗡𝗞 𝗥𝗘𝗗𝗘𝗘𝗠 • 𝟭𝟴 𝗕𝗨𝗟𝗔𝗡
 
 ╭─〔 📖 𝗜𝗻𝗳𝗼 〕
 ◆ Link redeem telah diperiksa dulu sebelum dikirim ke stok bot.
@@ -43,9 +51,24 @@ const INITIAL_PRODUCTS = [
 ◆ Kesalahan redeem akibat kelalaian pengguna tidak termasuk garansi.
 ◆ Dengan melakukan pembelian, pembeli dianggap telah membaca, memahami, dan menyetujui seluruh S&K yang berlaku.
 
-╰─❖ 𝗧𝗲𝗿𝗶𝗺𝗮 𝗸𝗮𝘀𝗶𝗵 𝘁𝗲𝗹𝗮𝗵 𝗼𝗿𝗱𝗲𝗿. 💙',
+╰─❖ 𝗧𝗲𝗿𝗶𝗺𝗮 𝗸𝗮𝘀𝗶𝗵 𝘁𝗲𝗹𝗮𝗵 𝗼𝗿𝗱𝗲𝗿. 💙`
+      },
+      {
+        id: 'gem-1y',
+        name: 'Head 1 Tahun',
+        price: 35000,
+        duration: '12 Bulan',
+        type: 'Invite Head',
+        stokHabis: false,
+        deskripsi: [
+          'Aktivasi instan via link resmi',
+          'Akses fitur Gemini Advanced 1 Tahun',
+          'Full garansi penggantian jika link berkendala'
+        ],
+        snk: 'Wajib mengaktifkan link maksimal 24 jam setelah pembelian. Garansi berlaku penuh sesuai durasi paket.'
+      }
     ],
-    features: ['Nikmati kemudahan dengan AI dalam sehari - hari mu']
+    features: ['Nikmati kemudahan dengan AI dalam sehari - hari mu', 'Konteks token besar & respon cepat', 'Garansi aktif sesuai durasi']
   },
   {
     id: 'spotify',
@@ -59,9 +82,36 @@ const INITIAL_PRODUCTS = [
     rating: '4.8',
     soldCount: '980+',
     variants: [
-      { id: 'sp-ind-1m', name: '1 Bulan Plan Baru/Perpanjang', price: 15000, duration: '1 Bulan', type: 'Individual' },
-      { id: 'sp-ind-3m', name: '3 Bulan Plan Invite', price: 38000, duration: '3 Bulan', type: 'Family Invite' },
-      { id: 'sp-ind-1y', name: '1 Tahun Full Garansi', price: 135000, duration: '12 Bulan', type: 'Private' },
+      {
+        id: 'sp-ind-1m',
+        name: '1 Bulan Plan Baru/Perpanjang',
+        price: 15000,
+        duration: '1 Bulan',
+        type: 'Individual',
+        stokHabis: false,
+        deskripsi: ['Bisa akun lama atau baru', 'Bebas skip lagu sepuasnya', 'Download offline aktif'],
+        snk: 'Akun tidak boleh melanggar ketentuan region Spotify Family/Individual selama aktif.'
+      },
+      {
+        id: 'sp-ind-3m',
+        name: '3 Bulan Plan Invite',
+        price: 38000,
+        duration: '3 Bulan',
+        type: 'Family Invite',
+        stokHabis: false,
+        deskripsi: ['Sistem invite link resmi', 'Garansi replace 3 bulan', 'Bisa pakai akun pribadi'],
+        snk: 'Akun tidak boleh pernah pindah Family Plan dalam kurun waktu 12 bulan terakhir.'
+      },
+      {
+        id: 'sp-ind-1y',
+        name: '1 Tahun Full Garansi',
+        price: 135000,
+        duration: '12 Bulan',
+        type: 'Private',
+        stokHabis: true,
+        deskripsi: ['Akun private eksklusif', 'Full garansi durasi 365 hari'],
+        snk: 'Dilarang mengganti alamat email atau data billing bawaan profil.'
+      },
     ],
     features: ['Bebas skip lagu sepuasnya', 'Download & dengarkan offline', 'Bisa akun lama atau baru']
   },
@@ -77,9 +127,36 @@ const INITIAL_PRODUCTS = [
     rating: '4.9',
     soldCount: '820+',
     variants: [
-      { id: 'yt-fam-1m', name: '1 Bulan Invite Family', price: 12000, duration: '1 Bulan', type: 'Invite' },
-      { id: 'yt-fam-3m', name: '3 Bulan Invite Family', price: 32000, duration: '3 Bulan', type: 'Invite' },
-      { id: 'yt-ind-1m', name: '1 Bulan Individual Tanpa Invite', price: 25000, duration: '1 Bulan', type: 'Individual' },
+      {
+        id: 'yt-fam-1m',
+        name: '1 Bulan Invite Family',
+        price: 12000,
+        duration: '1 Bulan',
+        type: 'Invite',
+        stokHabis: false,
+        deskripsi: ['Invite via email Google kamu', 'Bebas iklan di seluruh device', 'Termasuk YouTube Music'],
+        snk: 'Email Google belum mencapai batas maksimal ganti keluarga (maks 1x per tahun).'
+      },
+      {
+        id: 'yt-fam-3m',
+        name: '3 Bulan Invite Family',
+        price: 32000,
+        duration: '3 Bulan',
+        type: 'Invite',
+        stokHabis: false,
+        deskripsi: ['Hemat 3 bulan langsung', 'Garansi invite ulang jika kendala'],
+        snk: 'Wajib menerima undangan keluarga dalam kurun waktu maksimal 2x24 jam.'
+      },
+      {
+        id: 'yt-ind-1m',
+        name: '1 Bulan Individual Tanpa Invite',
+        price: 25000,
+        duration: '1 Bulan',
+        type: 'Individual',
+        stokHabis: false,
+        deskripsi: ['Akun baru siap pakai', 'Akses penuh tanpa ikatan grup keluarga'],
+        snk: 'Garansi berlaku selama data login tidak diubah secara sepihak.'
+      },
     ],
     features: ['Tanpa gangguan iklan sama sekali', 'Putar di latar belakang & layar mati', 'Termasuk YouTube Music Premium']
   },
@@ -95,9 +172,36 @@ const INITIAL_PRODUCTS = [
     rating: '5.0',
     soldCount: '1.2k+',
     variants: [
-      { id: 'cnv-tm-1m', name: '1 Bulan Team Designer', price: 12000, duration: '1 Bulan', type: 'Invite Team' },
-      { id: 'cnv-tm-1y', name: '1 Tahun Garansi Penuh', price: 35000, duration: '1 Tahun', type: 'Member Invite' },
-      { id: 'cnv-edu-lf', name: 'Lifetime Edu/Designer Plan', price: 55000, duration: 'Permanen', type: 'Lifelong' },
+      {
+        id: 'cnv-tm-1m',
+        name: '1 Bulan Team Designer',
+        price: 12000,
+        duration: '1 Bulan',
+        type: 'Invite Team',
+        stokHabis: false,
+        deskripsi: ['Bisa pakai email pribadi kamu', 'Fitur Magic Eraser terbuka', 'Download transparan PNG'],
+        snk: 'Cukup cantumkan email aktif saat checkout, link join tim akan otomatis dikirim.'
+      },
+      {
+        id: 'cnv-tm-1y',
+        name: '1 Tahun Garansi Penuh',
+        price: 35000,
+        duration: '1 Tahun',
+        type: 'Member Invite',
+        stokHabis: false,
+        deskripsi: ['Masa aktif 365 hari', 'Full replacement jika tim bermasalah'],
+        snk: 'Desain pribadi di folder tim tetap privat dan tidak bisa dilihat anggota lain.'
+      },
+      {
+        id: 'cnv-edu-lf',
+        name: 'Lifetime Edu/Designer Plan',
+        price: 55000,
+        duration: 'Permanen',
+        type: 'Lifelong',
+        stokHabis: false,
+        deskripsi: ['Sekali bayar aktif selamanya', 'Akses jutaan template premium'],
+        snk: 'Garansi pemulihan 1 tahun pertama sejak tanggal transaksi.'
+      },
     ],
     features: ['Hapus latar belakang foto 1 klik', 'Ribuan template & font premium', 'Bisa pakai email pribadi kamu']
   },
@@ -113,8 +217,26 @@ const INITIAL_PRODUCTS = [
     rating: '4.9',
     soldCount: '630+',
     variants: [
-      { id: 'gpt-sh-1m', name: '1 Bulan Sharing Akun', price: 45000, duration: '1 Bulan', type: 'Sharing' },
-      { id: 'gpt-pv-1m', name: '1 Bulan Private Akun Baru', price: 299000, duration: '1 Bulan', type: 'Private' },
+      {
+        id: 'gpt-sh-1m',
+        name: '1 Bulan Sharing Akun',
+        price: 45000,
+        duration: '1 Bulan',
+        type: 'Sharing',
+        stokHabis: false,
+        deskripsi: ['1 Akun dibagi beberapa pengguna', 'Akses GPT-4o & DALL-E 3', 'Hemat biaya langganan'],
+        snk: 'Dilarang keras mengubah password akun atau menghapus chat history pengguna lain.'
+      },
+      {
+        id: 'gpt-pv-1m',
+        name: '1 Bulan Private Akun Baru',
+        price: 299000,
+        duration: '1 Bulan',
+        type: 'Private',
+        stokHabis: false,
+        deskripsi: ['Akun privat eksklusif 1 user', 'Bebas ubah password', 'Riwayat chat 100% aman'],
+        snk: 'Garansi replace akun berlaku penuh selama 30 hari sesuai ketentuan OpenAI.'
+      },
     ],
     features: ['Akses prioritas tanpa limit antrean', 'Generate gambar DALL-E 3', 'Analisis file spreadsheet & PDF']
   },
@@ -130,8 +252,26 @@ const INITIAL_PRODUCTS = [
     rating: '4.8',
     soldCount: '750+',
     variants: [
-      { id: 'cp-sh-1m', name: '1 Bulan Sharing Device', price: 18000, duration: '1 Bulan', type: 'Sharing' },
-      { id: 'cp-pv-1y', name: '1 Tahun Full Garansi', price: 125000, duration: '1 Tahun', type: 'Private' },
+      {
+        id: 'cp-sh-1m',
+        name: '1 Bulan Sharing Device',
+        price: 18000,
+        duration: '1 Bulan',
+        type: 'Sharing',
+        stokHabis: false,
+        deskripsi: ['Ekspor video 4K tanpa watermark', 'Akses seluruh filter dan transisi VIP', 'Bisa di HP atau PC'],
+        snk: 'Maksimal login di 1 perangkat per pesanan.'
+      },
+      {
+        id: 'cp-pv-1y',
+        name: '1 Tahun Full Garansi',
+        price: 125000,
+        duration: '1 Tahun',
+        type: 'Private',
+        stokHabis: false,
+        deskripsi: ['Akun private durasi 365 hari', 'Cloud storage 100GB aktif', 'Bisa login multiple device'],
+        snk: 'Full support penggantian akun jika terjadi kendala login mendadak.'
+      },
     ],
     features: ['Bebas ekspor 4K 60FPS tanpa watermark', 'Semua transisi & efek VIP terbuka', 'Bisa di HP (Android/iOS) & PC']
   }
@@ -140,23 +280,23 @@ const INITIAL_PRODUCTS = [
 const INITIAL_ORDERS = [
   {
     id: 'YOG-849102',
-    productName: 'Netflix Premium 4K (1 Bulan Sharing (1 Profil))',
-    variantId: 'nf-sh-1m',
-    price: 28800,
+    productName: 'Gemini Pro Advanced AI (Head 18 Bulan)',
+    variantId: 'gem-18m',
+    price: 10800,
     paymentMethod: 'QRIS Realtime',
     whatsapp: '081234567890',
     email: 'alex.buyer@gmail.com',
     status: 'MENUNGGU BAYAR',
     createdAt: '2026-09-20 18:32',
     accountDetails: {
-      emailLogin: 'netf-vip-092@premiumzone.net',
+      emailLogin: 'gemini.vip01@premiumzone.net',
       passwordLogin: 'YogsPass#9920',
-      profilePin: 'Profil 2 (PIN: 8821)'
+      profilePin: 'Link Redeem: bit.ly/yogs-gem-18m'
     }
   },
   {
     id: 'YOG-291048',
-    productName: 'Spotify Premium Family/Indiv (3 Bulan Plan Invite)',
+    productName: 'Spotify Premium Individual (3 Bulan Plan Invite)',
     variantId: 'sp-ind-3m',
     price: 38800,
     paymentMethod: 'BCA Virtual Account',
@@ -221,6 +361,7 @@ export default function App() {
   const handleOpenCheckout = (product) => {
     setActiveProduct(product);
     setSelectedVariant(product.variants[0]);
+    setActiveTab('deskripsi');
     setSelectedPayment('qris');
   };
 
@@ -237,13 +378,18 @@ export default function App() {
       return;
     }
 
+    if (selectedVariant && selectedVariant.stokHabis) {
+      alert('Mohon maaf, varian paket ini sedang habis.');
+      return;
+    }
+
     const randomId = 'YOG-' + Math.floor(100000 + Math.random() * 900000);
     const fee = selectedPayment === 'qris' ? 800 : 1500;
     const grandTotal = selectedVariant.price + fee;
 
     const newOrder = {
       id: randomId,
-      productName: productName: activeProduct.name + ' (' + selectedVariant.name + ')',
+      productName: activeProduct.name + ' (' + selectedVariant.name + ')',
       variantId: selectedVariant.id,
       price: grandTotal,
       paymentMethod: selectedPayment === 'qris' ? 'QRIS Realtime' : selectedPayment.toUpperCase() + ' Virtual Account',
@@ -251,11 +397,12 @@ export default function App() {
       email: customerEmail,
       status: 'MENUNGGU BAYAR',
       createdAt: 'Baru saja',
-     accountDetails: {
+      accountDetails: {
         emailLogin: 'yogs.' + activeProduct.id + Math.floor(100 + Math.random() * 900) + '@premiumzone.net',
         passwordLogin: 'YogsStore#' + Math.floor(1000 + Math.random() * 9000),
         profilePin: selectedVariant.type === 'Private' ? 'Private Account (Full Akses)' : 'Profil ' + Math.floor(1 + Math.random() * 4) + ' (PIN: ' + Math.floor(1000 + Math.random() * 9000) + ')'
       }
+    };
 
     setOrders([newOrder, ...orders]);
     setCurrentInvoice(newOrder);
@@ -309,6 +456,18 @@ export default function App() {
     }));
   };
 
+  const handleToggleStock = (productId, variantId, currentStatus) => {
+    setProducts(prev => prev.map(p => {
+      if (p.id === productId) {
+        return {
+          ...p,
+          variants: p.variants.map(v => v.id === variantId ? { ...v, stokHabis: !currentStatus } : v)
+        };
+      }
+      return p;
+    }));
+  };
+
   const handleUpdateAccountDetails = (orderId, field, value) => {
     setOrders(prev => prev.map(o => {
       if (o.id === orderId) {
@@ -348,7 +507,10 @@ export default function App() {
           name: newProdVariantName,
           price: parseInt(newProdVariantPrice) || 25000,
           duration: '1 Bulan',
-          type: newProdVariantType
+          type: newProdVariantType,
+          stokHabis: false,
+          deskripsi: ['Akses akun resmi bergaransi', 'Support kendala 24 jam'],
+          snk: 'Gunakan akun sesuai kapasitas varian yang dipilih.'
         }
       ],
       features: newProdFeatures.split(',').map(f => f.trim())
@@ -440,7 +602,7 @@ export default function App() {
           <div className="flex flex-col md:flex-row md:items-center justify-between pb-6 border-b border-slate-800 gap-4">
             <div>
               <h1 className="text-2xl font-black text-white">Dashboard Kontrol Admin</h1>
-              <p className="text-slate-400 text-xs sm:text-sm mt-1">Kelola transaksi pesanan, atur harga paket, dan ganti akun digital pembeli.</p>
+              <p className="text-slate-400 text-xs sm:text-sm mt-1">Kelola transaksi pesanan, atur harga paket, stok ketersediaan, dan ganti akun digital pembeli.</p>
             </div>
             <button
               onClick={() => setIsAdminMode(false)}
@@ -480,7 +642,7 @@ export default function App() {
               onClick={() => setAdminActiveTab('prices')}
               className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition ${adminActiveTab === 'prices' ? 'bg-purple-600 text-white' : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'}`}
             >
-              Atur Harga & Varian Produk
+              Atur Harga, Varian & Stok
             </button>
             <button
               onClick={() => setAdminActiveTab('settings')}
@@ -556,7 +718,7 @@ export default function App() {
                         value={ord.accountDetails.profilePin}
                         onChange={(e) => handleUpdateAccountDetails(ord.id, 'profilePin', e.target.value)}
                         className="w-full bg-slate-900 border border-slate-800 text-purple-200 px-2 py-1 rounded text-xs"
-                        placeholder="PIN Profil / Catatan Tambahan"
+                        placeholder="PIN Profil / Link Redeem"
                       />
                     </div>
                   </div>
@@ -569,8 +731,8 @@ export default function App() {
             <div className="space-y-6">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-slate-900 p-4 rounded-2xl border border-slate-800">
                 <div>
-                  <h3 className="text-sm font-bold text-white">Kelola Produk & Harga Jual</h3>
-                  <p className="text-xs text-slate-400 mt-0.5">Ubah nominal harga langsung di sini, harga di etalase akan langsung ter-update.</p>
+                  <h3 className="text-sm font-bold text-white">Kelola Produk, Harga & Ketersediaan Stok</h3>
+                  <p className="text-xs text-slate-400 mt-0.5">Ubah nominal harga dan tandai stok habis. Perubahan langsung aktif di katalog toko.</p>
                 </div>
                 <button
                   onClick={() => setShowAddProductModal(true)}
@@ -592,16 +754,34 @@ export default function App() {
                     </div>
                     <div className="space-y-2">
                       {p.variants.map((v) => (
-                        <div key={v.id} className="flex items-center justify-between bg-slate-950 p-2.5 rounded-xl border border-slate-800/80 text-xs">
-                          <span className="text-slate-300 font-medium">{v.name}</span>
-                          <div className="flex items-center space-x-1.5">
-                            <span className="text-slate-500 text-xs font-bold">Rp</span>
-                            <input
-                              type="number"
-                              value={v.price}
-                              onChange={(e) => handleUpdatePrice(p.id, v.id, e.target.value)}
-                              className="w-24 bg-slate-900 border border-slate-700 text-right px-2 py-1 rounded text-white font-mono font-bold focus:border-purple-500 focus:outline-none"
-                            />
+                        <div key={v.id} className="flex flex-col sm:flex-row sm:items-center justify-between bg-slate-950 p-2.5 rounded-xl border border-slate-800/80 text-xs gap-2">
+                          <div className="flex items-center space-x-2">
+                            <span className="text-slate-300 font-medium">{v.name}</span>
+                            {v.stokHabis && (
+                              <span className="text-[9px] bg-rose-500/20 text-rose-400 border border-rose-500/30 px-1.5 py-0.5 rounded font-bold">
+                                Habis
+                              </span>
+                            )}
+                          </div>
+                          <div className="flex items-center space-x-3">
+                            <label className="flex items-center space-x-1 text-[11px] text-slate-400 cursor-pointer">
+                              <input
+                                type="checkbox"
+                                checked={v.stokHabis || false}
+                                onChange={() => handleToggleStock(p.id, v.id, v.stokHabis)}
+                                className="rounded text-rose-500 bg-slate-900 border-slate-700"
+                              />
+                              <span className={v.stokHabis ? "text-rose-400 font-bold" : ""}>Stok Habis</span>
+                            </label>
+                            <div className="flex items-center space-x-1">
+                              <span className="text-slate-500 text-xs font-bold">Rp</span>
+                              <input
+                                type="number"
+                                value={v.price}
+                                onChange={(e) => handleUpdatePrice(p.id, v.id, e.target.value)}
+                                className="w-24 bg-slate-900 border border-slate-700 text-right px-2 py-1 rounded text-white font-mono font-bold focus:border-purple-500 focus:outline-none"
+                              />
+                            </div>
                           </div>
                         </div>
                       ))}
@@ -657,7 +837,7 @@ export default function App() {
                 Nikmati Hiburan <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">Premium Murah & Legal</span>
               </h1>
               <p className="text-slate-400 text-sm sm:text-base max-w-xl mx-auto mt-3">
-                Pusat langganan Netflix, Spotify, Canva Pro, YouTube tanpa ribet. Akun dikirim instan langsung setelah pembayaran otomatis QRIS.
+                Pusat langganan Gemini Advanced AI, Spotify, Canva Pro, YouTube tanpa ribet. Akun dikirim instan langsung setelah pembayaran otomatis QRIS.
               </p>
 
               <div className="flex flex-wrap justify-center gap-2 mt-8">
@@ -878,22 +1058,79 @@ export default function App() {
 
             <form onSubmit={handleProcessOrder} className="space-y-4 text-xs">
               <div>
-                <label className="block text-slate-400 font-semibold mb-1.5">1. Pilih Paket & Durasi:</label>
-                <div className="space-y-1.5">
-                  {activeProduct.variants.map((v) => (
-                    <div
-                      key={v.id}
-                      onClick={() => setSelectedVariant(v)}
-                      className={`p-3 rounded-xl border flex items-center justify-between cursor-pointer transition ${selectedVariant?.id === v.id ? 'bg-purple-600/20 border-purple-500 text-white' : 'bg-slate-900 border-slate-800 text-slate-400 hover:border-slate-700'}`}
-                    >
-                      <div>
-                        <span className="font-bold block text-slate-200">{v.name}</span>
-                        <span className="text-[10px] text-purple-300 uppercase font-mono">{v.type}</span>
-                      </div>
-                      <span className="font-black text-purple-400 text-sm">{formatRupiah(v.price)}</span>
-                    </div>
-                  ))}
+                <label className="block text-slate-300 font-bold mb-2">1. Pilih Variasi Paket:</label>
+                <div className="flex flex-wrap gap-2">
+                  {activeProduct.variants.map((v) => {
+                    const isSelected = selectedVariant?.id === v.id;
+                    return (
+                      <button
+                        key={v.id}
+                        type="button"
+                        onClick={() => setSelectedVariant(v)}
+                        className={`px-4 py-2 rounded-full text-xs font-bold transition border flex items-center space-x-1.5 ${
+                          isSelected
+                            ? 'bg-[#00a8cc] border-[#00a8cc] text-white shadow-md shadow-cyan-500/30'
+                            : 'bg-slate-900 border-slate-700 text-slate-300 hover:border-slate-500'
+                        }`}
+                      >
+                        <span>{v.name}</span>
+                        {v.stokHabis && (
+                          <span className="text-[9px] bg-rose-500 text-white px-1.5 py-0.5 rounded-full font-semibold">
+                            Habis
+                          </span>
+                        )}
+                      </button>
+                    );
+                  })}
                 </div>
+              </div>
+
+              <div className="border-b border-slate-800">
+                <div className="flex">
+                  <button
+                    type="button"
+                    onClick={() => setActiveTab('deskripsi')}
+                    className={`w-1/2 py-2.5 text-center text-xs font-bold tracking-wider transition border-b-2 ${
+                      activeTab === 'deskripsi'
+                        ? 'border-[#00a8cc] text-[#00a8cc]'
+                        : 'border-transparent text-slate-500 hover:text-slate-300'
+                    }`}
+                  >
+                    DESKRIPSI
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setActiveTab('snk')}
+                    className={`w-1/2 py-2.5 text-center text-xs font-bold tracking-wider transition border-b-2 ${
+                      activeTab === 'snk'
+                        ? 'border-[#00a8cc] text-[#00a8cc]'
+                        : 'border-transparent text-slate-500 hover:text-slate-300'
+                    }`}
+                  >
+                    S & K
+                  </button>
+                </div>
+              </div>
+
+              <div className="p-3 bg-slate-950/70 rounded-2xl border border-slate-800/80 max-h-48 overflow-y-auto">
+                {activeTab === 'deskripsi' ? (
+                  <ul className="space-y-1.5 text-slate-300">
+                    {Array.isArray(selectedVariant?.deskripsi) ? (
+                      selectedVariant.deskripsi.map((poin, idx) => (
+                        <li key={idx} className="flex items-start space-x-2">
+                          <span className="text-[#00a8cc] font-bold">・</span>
+                          <span>{poin}</span>
+                        </li>
+                      ))
+                    ) : (
+                      <li className="text-slate-400">{selectedVariant?.deskripsi || 'Tidak ada deskripsi rincian khusus.'}</li>
+                    )}
+                  </ul>
+                ) : (
+                  <div className="whitespace-pre-line text-slate-300 text-[11px] leading-relaxed">
+                    {selectedVariant?.snk || 'Tidak ada syarat & ketentuan khusus untuk varian ini.'}
+                  </div>
+                )}
               </div>
 
               <div>
@@ -948,15 +1185,20 @@ export default function App() {
                 </div>
                 <div className="flex justify-between font-black text-white text-sm pt-1 border-t border-slate-800">
                   <span>Total Pembayaran</span>
-                  <span className="text-purple-400">{formatRupiah(calculateTotal())}</span>
+                  <span className="text-[#00a8cc]">{formatRupiah(calculateTotal())}</span>
                 </div>
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-black py-3 rounded-xl transition shadow-lg shadow-purple-600/30 text-sm"
+                disabled={selectedVariant?.stokHabis}
+                className={`w-full font-black py-3 rounded-xl transition text-sm ${
+                  selectedVariant?.stokHabis
+                    ? 'bg-slate-700 text-slate-400 cursor-not-allowed opacity-60'
+                    : 'bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white shadow-lg shadow-purple-600/30'
+                }`}
               >
-                Lanjut Pembayaran →
+                {selectedVariant?.stokHabis ? 'Stok Varian Habis' : 'Lanjut Pembayaran →'}
               </button>
             </form>
           </div>
@@ -1001,7 +1243,7 @@ export default function App() {
                     </div>
                   </div>
                   <div>
-                    <span className="text-slate-500 block text-[10px]">PROFIL / PIN:</span>
+                    <span className="text-slate-500 block text-[10px]">PROFIL / LINK REDEEM:</span>
                     <span className="font-medium text-slate-200">{currentInvoice.accountDetails.profilePin}</span>
                   </div>
                 </div>
@@ -1111,7 +1353,7 @@ export default function App() {
                 type="password"
                 maxLength={6}
                 autoFocus
-                placeholder="Default PIN: 123456"
+                placeholder="Masukkan 6 Digit PIN"
                 value={adminPinInput}
                 onChange={(e) => setAdminPinInput(e.target.value)}
                 className="w-full text-center tracking-widest font-mono text-lg bg-slate-950 border border-slate-800 rounded-xl py-2.5 text-white focus:border-purple-500 focus:outline-none"
