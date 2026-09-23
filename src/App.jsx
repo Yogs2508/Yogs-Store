@@ -7,7 +7,7 @@ const INITIAL_PRODUCTS = [
     category: 'streaming',
     tag: 'VIP ACCESS',
     tagColor: 'bg-amber-500/10 text-amber-400 border-amber-500/30',
-    image: 'https://www.magnific.com/idn/foto-vektor-gratis/zoom',
+    image: 'https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?w=120&auto=format&fit=crop&q=80',
     description: 'Meeting online tanpa batas durasi 40 menit, kapasitas 100 peserta, cloud recording, dan audio-video kualitas HD.',
     rating: '4.9',
     soldCount: '310+',
