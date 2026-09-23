@@ -7,7 +7,7 @@ const INITIAL_PRODUCTS = [
     category: 'streaming',
     tag: 'VIP ACCESS',
     tagColor: 'bg-amber-500/10 text-amber-400 border-amber-500/30',
-    image: 'https://www.google.com/imgres?q=zoom&imgurl=https%3A%2F%2Fsoftware.deakin.edu.au%2Fwp-content%2Fuploads%2Fsites%2F41%2F2021%2F07%2FZoom-icon-300x300.png&imgrefurl=https%3A%2F%2Fsoftware.deakin.edu.au%2F2021%2F07%2F14%2Fzoom-client%2F&docid=GiqHivWm1Ca9IM&tbnid=D_COe4W6lHmRSM&vet=12ahUKEwihmsTTiYWXAxW5kOEIHQgvBYcQnPAOegUIpQMQAA..i&w=300&h=300&hcb=2&ved=2ahUKEwihmsTTiYWXAxW5kOEIHQgvBYcQnPAOegUIpQMQAA',
+    image: 'https://www.magnific.com/idn/foto-vektor-gratis/zoom',
     description: 'Meeting online tanpa batas durasi 40 menit, kapasitas 100 peserta, cloud recording, dan audio-video kualitas HD.',
     rating: '4.9',
     soldCount: '310+',
