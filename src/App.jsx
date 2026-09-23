@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
+// Masukkan tautan langsung gambar logo tokomu di sini:
+const STORE_LOGO_URL = 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=120&auto=format&fit=crop&q=80';
+
 const INITIAL_PRODUCTS = [
   {
     id: 'zoom-pro',
@@ -7,7 +10,7 @@ const INITIAL_PRODUCTS = [
     category: 'streaming',
     tag: 'VIP ACCESS',
     tagColor: 'bg-amber-500/10 text-amber-400 border-amber-500/30',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqbeX13dqb7wWtVCIWRGhJ1lU5fly61QpvUg3vevrMcQ&s=10',
+    image: 'https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?w=120&auto=format&fit=crop&q=80',
     description: 'Meeting online tanpa batas durasi 40 menit, kapasitas 100 peserta, cloud recording, dan audio-video kualitas HD.',
     rating: '4.9',
     soldCount: '310+',
@@ -87,7 +90,7 @@ Harap membaca ketentuan berikut agar akun tetap aman dan garansi tetap berlaku.
 https://sengare.art/check-inbox
 
 ╭─〔 🎥 𝗣𝗮𝗻𝗱𝘂𝗮𝗻 〕
-◆ Jika diminta verifikasi saat login, pilih 𝗦𝗸𝗶𝗽 (𝗟𝗲𝘄𝗮𝘁𝗶).
+◆ Jika diminta verifikasi saat login, pilih 𝗦𝗸𝗶𝗽 (𝗟𝗲𝘄𝗮𝘁i).
 ◆ 𝗖𝗹𝗼𝘂𝗱 𝗥𝗲𝗰𝗼𝗿𝗱𝗶𝗻𝗴 dapat diakses melalui:
 https://zoom.us/recording
 
@@ -462,6 +465,17 @@ export default function App() {
   const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
+    // Otomatis sinkronkan favicon browser dengan logo toko
+    const existingFavicon = document.querySelector("link[rel*='icon']");
+    if (existingFavicon) {
+      existingFavicon.href = STORE_LOGO_URL;
+    } else {
+      const newFavicon = document.createElement('link');
+      newFavicon.rel = 'icon';
+      newFavicon.href = STORE_LOGO_URL;
+      document.head.appendChild(newFavicon);
+    }
+
     const handleMouseMove = (e) => {
       setCursorPos({ x: e.clientX, y: e.clientY });
     };
@@ -750,13 +764,15 @@ export default function App() {
         </div>
       </div>
 
-      {/* Header Ala Akademi Crypto */}
+      {/* Header dengan Logo Kustom */}
       <header className="sticky top-0 z-30 bg-[#070709]/80 backdrop-blur-xl border-b border-zinc-800/80">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-3 cursor-pointer" onClick={() => setIsAdminMode(false)}>
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-400 via-amber-500 to-amber-600 flex items-center justify-center shadow-[0_0_20px_rgba(245,158,11,0.35)] text-black font-black text-lg">
-              Y
-            </div>
+            <img
+              src={STORE_LOGO_URL}
+              alt="Logo Yogs Store"
+              className="w-10 h-10 rounded-xl object-cover border border-amber-500/40 shadow-[0_0_15px_rgba(245,158,11,0.25)]"
+            />
             <div>
               <span className="text-lg font-black tracking-wider text-white">YOGS<span className="text-amber-400 font-mono">.ID</span></span>
               <p className="text-[10px] text-zinc-500 font-mono uppercase tracking-widest -mt-1">Premium Digital Terminal</p>
@@ -1007,9 +1023,8 @@ export default function App() {
         </section>
       ) : (
         <>
-          {/* Hero Section Akademi Crypto Vibe */}
+          {/* Hero Section */}
           <section className="relative pt-20 pb-16 text-center px-4 overflow-hidden">
-            {/* Radial Glow Effect */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[280px] bg-amber-500/10 blur-[130px] pointer-events-none rounded-full" />
 
             <div className="max-w-3xl mx-auto relative z-10">
@@ -1023,7 +1038,7 @@ export default function App() {
                 Langganan Zoom Pro, Canva Pro Famhead, Gemini Advanced AI, dan CapCut dengan jaminan garansi penuh dan pengiriman kredensial akun instan.
               </p>
 
-              {/* Kategori Tab Pill Modern */}
+              {/* Kategori Tab Pill */}
               <div className="flex flex-wrap justify-center gap-2 mt-10">
                 {[
                   { id: 'all', label: 'SEMUA AKSES' },
@@ -1099,7 +1114,7 @@ export default function App() {
               })}
             </div>
 
-            {/* Feature Cards Modern */}
+            {/* Feature Cards */}
             <section className="mt-16 bg-[#0e0e12] border border-zinc-800 rounded-3xl p-8">
               <h3 className="text-base font-black font-mono text-white text-center uppercase tracking-widest mb-6">STANDAR KEUNGGULAN YOGS STORE</h3>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
@@ -1534,7 +1549,7 @@ export default function App() {
               <div className="bg-[#070709] p-4 rounded-2xl border border-zinc-800 text-xs space-y-2">
                 <div className="flex justify-between items-center border-b border-zinc-800 pb-2">
                   <span className="font-mono font-bold text-amber-400">{trackingResult.id}</span>
-                  <span className={`text-[10px] font-bold font-mono px-2 py-0.5 rounded-full ${trackingResult.status === 'SUKSES' ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/30' : 'bg-amber-500/10 text-amber-400 border border-amber-500/30'}`}>
+                  <span className={`text-[10px] font-bold font-mono px-2.5 py-0.5 rounded-full ${trackingResult.status === 'SUKSES' ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/30' : 'bg-amber-500/10 text-amber-400 border border-amber-500/30'}`}>
                     {trackingResult.status}
                   </span>
                 </div>
