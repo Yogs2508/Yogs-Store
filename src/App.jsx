@@ -7,7 +7,7 @@ const INITIAL_PRODUCTS = [
     category: 'streaming',
     tag: 'VIP ACCESS',
     tagColor: 'bg-amber-500/10 text-amber-400 border-amber-500/30',
-    image: 'https://images.unsplash.com/photo-1616469829941-c7200edec809?w=120&auto=format&fit=crop&q=80',
+    image: 'https://www.google.com/imgres?q=zoom&imgurl=https%3A%2F%2Fimg.utdstc.com%2Ficon%2F422%2Ff9e%2F422f9e2c29e37fba78323869f7ab8207e8562a5d0ae8ae5a36dab2593dbacab1%3A600&imgrefurl=https%3A%2F%2Fzoom.id.uptodown.com%2Fmac&docid=Qz3prSwlg6cEEM&tbnid=RaLdM6xXjI25SM&vet=12ahUKEwihmsTTiYWXAxW5kOEIHQgvBYcQnPAOegQISxAA..i&w=600&h=600&hcb=2&ved=2ahUKEwihmsTTiYWXAxW5kOEIHQgvBYcQnPAOegQISxAA',
     description: 'Meeting online tanpa batas durasi 40 menit, kapasitas 100 peserta, cloud recording, dan audio-video kualitas HD.',
     rating: '4.9',
     soldCount: '310+',
