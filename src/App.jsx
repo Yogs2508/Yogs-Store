@@ -10,7 +10,7 @@ const INITIAL_PRODUCTS = [
     category: 'streaming',
     tag: 'VIP ACCESS',
     tagColor: 'bg-amber-500/10 text-amber-400 border-amber-500/30',
-    image: 'https://cdn.iconscout.com/icon/free/png-512/free-zoom-logo-icon-download-in-svg-png-gif-file-formats--meeting-video-communication-social-media-pack-logos-icons-1175200.png',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwHlV4QBRM4vJBkGncwGD6EKBhMWKHrAdcNzzhtqQV_A&s=10',
     description: 'Meeting online tanpa batas durasi 40 menit, kapasitas 100 peserta, cloud recording, dan audio-video kualitas HD.',
     rating: '4.9',
     soldCount: '310+',
