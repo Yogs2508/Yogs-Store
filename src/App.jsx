@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-// Masukkan tautan langsung gambar logo tokomu di sini:
-const STORE_LOGO_URL = 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=120&auto=format&fit=crop&q=80';
+// URL Direct Image dari Google Drive kamu
+const STORE_LOGO_URL = 'https://lh3.googleusercontent.com/d/1KHWsqxCJXnNU4BjHUID05nAU7nPZTTtP';
 
 const INITIAL_PRODUCTS = [
   {
@@ -90,7 +90,7 @@ Harap membaca ketentuan berikut agar akun tetap aman dan garansi tetap berlaku.
 https://sengare.art/check-inbox
 
 ╭─〔 🎥 𝗣𝗮𝗻𝗱𝘂𝗮𝗻 〕
-◆ Jika diminta verifikasi saat login, pilih 𝗦𝗸𝗶𝗽 (𝗟𝗲𝘄𝗮𝘁i).
+◆ Jika diminta verifikasi saat login, pilih 𝗦𝗸𝗶𝗽 (𝗟𝗲𝘄𝗮𝘁𝗶).
 ◆ 𝗖𝗹𝗼𝘂𝗱 𝗥𝗲𝗰𝗼𝗿𝗱𝗶𝗻𝗴 dapat diakses melalui:
 https://zoom.us/recording
 
@@ -465,7 +465,7 @@ export default function App() {
   const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
-    // Otomatis sinkronkan favicon browser dengan logo toko
+    // Sinkronisasi favicon browser dengan logo kustom tokomu
     const existingFavicon = document.querySelector("link[rel*='icon']");
     if (existingFavicon) {
       existingFavicon.href = STORE_LOGO_URL;
@@ -764,7 +764,7 @@ export default function App() {
         </div>
       </div>
 
-      {/* Header dengan Logo Kustom */}
+      {/* Header dengan Logo Kustom Toko */}
       <header className="sticky top-0 z-30 bg-[#070709]/80 backdrop-blur-xl border-b border-zinc-800/80">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-3 cursor-pointer" onClick={() => setIsAdminMode(false)}>
