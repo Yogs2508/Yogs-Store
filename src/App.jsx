@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
-// URL Direct Image dari Google Drive kamu
+// URL Direct Image dari Google Drive
 const STORE_LOGO_URL = 'https://lh3.googleusercontent.com/d/1KHWsqxCJXnNU4BjHUID05nAU7nPZTTtP';
 
 const INITIAL_PRODUCTS = [
@@ -10,7 +10,7 @@ const INITIAL_PRODUCTS = [
     category: 'streaming',
     tag: 'VIP ACCESS',
     tagColor: 'bg-amber-500/10 text-amber-400 border-amber-500/30',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwHlV4QBRM4vJBkGncwGD6EKBhMWKHrAdcNzzhtqQV_A&s=10',
+    image: 'https://cdn.iconscout.com/icon/free/png-512/free-zoom-logo-icon-download-in-svg-png-gif-file-formats--meeting-video-communication-social-media-pack-logos-icons-1175200.png',
     description: 'Meeting online tanpa batas durasi 40 menit, kapasitas 100 peserta, cloud recording, dan audio-video kualitas HD.',
     rating: '4.9',
     soldCount: '310+',
@@ -96,7 +96,7 @@ https://zoom.us/recording
 
 ◆ Jika menggunakan 𝗟𝗼𝗰𝗮𝗹 𝗥𝗲𝗰𝗼𝗿𝗱𝗶𝗻𝗴, hasil rekaman tersimpan di folder Documents pada perangkat.
 
-╭─〔 ⚠️ 𝗣𝗲𝗻𝘁𝗶𝗻𝗴 〕
+╭─〔 ⚠️️ 𝗣𝗲𝗻𝘁𝗶𝗻𝗴 〕
 ◆ Pastikan email dan password yang dimasukkan sudah benar.
 ◆ Simpan informasi akun dengan baik dan jangan dibagikan kepada pihak lain.
 
@@ -460,12 +460,91 @@ const INITIAL_ORDERS = [
 ];
 
 export default function App() {
+  const canvasRef = useRef(null);
   const [cursorPos, setCursorPos] = useState({ x: -100, y: -100 });
   const [cursorTrailing, setCursorTrailing] = useState({ x: -100, y: -100 });
   const [isHovered, setIsHovered] = useState(false);
 
+  // Background Animasi Canvas Partikel Emas Bergerak
   useEffect(() => {
-    // Sinkronisasi favicon browser dengan logo kustom tokomu
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let animationFrameId;
+
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    const particleCount = Math.min(Math.floor(window.innerWidth / 25), 65);
+    const particles = [];
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.45,
+        vy: (Math.random() - 0.5) * 0.45,
+        radius: Math.random() * 1.5 + 0.8,
+        alpha: Math.random() * 0.5 + 0.2
+      });
+    }
+
+    const render = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < 0) p.x = canvas.width;
+        if (p.x > canvas.width) p.x = 0;
+        if (p.y < 0) p.y = canvas.height;
+        if (p.y > canvas.height) p.y = 0;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(245, 158, 11, ${p.alpha})`;
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = 'rgba(245, 158, 11, 0.4)';
+        ctx.fill();
+
+        for (let j = i + 1; j < particles.length; j++) {
+          const p2 = particles[j];
+          const dx = p.x - p2.x;
+          const dy = p.y - p2.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < 115) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p2.x, p2.y);
+            const lineAlpha = (1 - dist / 115) * 0.16;
+            ctx.strokeStyle = `rgba(245, 158, 11, ${lineAlpha})`;
+            ctx.lineWidth = 0.7;
+            ctx.shadowBlur = 0;
+            ctx.stroke();
+          }
+        }
+      }
+
+      animationFrameId = requestAnimationFrame(render);
+    };
+
+    render();
+
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+      window.removeEventListener('resize', resizeCanvas);
+    };
+  }, []);
+
+  useEffect(() => {
+    // Sinkronisasi favicon browser
     const existingFavicon = document.querySelector("link[rel*='icon']");
     if (existingFavicon) {
       existingFavicon.href = STORE_LOGO_URL;
@@ -730,7 +809,13 @@ export default function App() {
   const filteredProducts = selectedCategory === 'all' ? products : products.filter(p => p.category === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-[#070709] text-zinc-100 font-sans antialiased pb-20 selection:bg-amber-500 selection:text-black">
+    <div className="min-h-screen bg-[#070709] text-zinc-100 font-sans antialiased pb-20 selection:bg-amber-500 selection:text-black relative overflow-hidden">
+      {/* Canvas Latar Belakang Bergerak (Interactive Golden Mesh) */}
+      <canvas
+        ref={canvasRef}
+        className="fixed inset-0 pointer-events-none z-0 opacity-55"
+      />
+
       {/* Cyber Gold Cursor Ring & Dot */}
       <div
         className="fixed top-0 left-0 w-2 h-2 bg-amber-400 rounded-full pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 shadow-[0_0_10px_#f59e0b] hidden md:block"
@@ -744,7 +829,7 @@ export default function App() {
       />
 
       {/* Top Ticker Gold Bar */}
-      <div className="bg-[#0e0e12] border-b border-amber-500/20 text-[11px] py-2 px-4 text-zinc-400">
+      <div className="bg-[#0e0e12]/90 backdrop-blur-md border-b border-amber-500/20 text-[11px] py-2 px-4 text-zinc-400 relative z-20">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <span className="inline-block w-2 h-2 rounded-full bg-amber-400 animate-pulse shadow-[0_0_8px_#fbbf24]"></span>
@@ -765,7 +850,7 @@ export default function App() {
       </div>
 
       {/* Header dengan Logo Kustom Toko */}
-      <header className="sticky top-0 z-30 bg-[#070709]/80 backdrop-blur-xl border-b border-zinc-800/80">
+      <header className="sticky top-0 z-30 bg-[#070709]/85 backdrop-blur-xl border-b border-zinc-800/80">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-3 cursor-pointer" onClick={() => setIsAdminMode(false)}>
             <img
@@ -799,7 +884,7 @@ export default function App() {
       </header>
 
       {isAdminMode ? (
-        <section className="max-w-6xl mx-auto px-4 pt-8">
+        <section className="max-w-6xl mx-auto px-4 pt-8 relative z-10">
           <div className="flex flex-col md:flex-row md:items-center justify-between pb-6 border-b border-zinc-800 gap-4">
             <div>
               <h1 className="text-2xl font-black text-white tracking-wide">ADMIN CONSOLE</h1>
@@ -814,19 +899,19 @@ export default function App() {
           </div>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 my-6">
-            <div className="bg-[#0f0f13] border border-zinc-800/80 p-5 rounded-2xl">
+            <div className="bg-[#0f0f13]/90 backdrop-blur-md border border-zinc-800/80 p-5 rounded-2xl">
               <span className="text-xs font-mono uppercase text-zinc-500 block mb-1">Total Omzet</span>
               <span className="text-xl font-black text-amber-400 font-mono">{formatRupiah(totalOmset)}</span>
             </div>
-            <div className="bg-[#0f0f13] border border-zinc-800/80 p-5 rounded-2xl">
+            <div className="bg-[#0f0f13]/90 backdrop-blur-md border border-zinc-800/80 p-5 rounded-2xl">
               <span className="text-xs font-mono uppercase text-zinc-500 block mb-1">Pesanan Sukses</span>
               <span className="text-xl font-black text-white font-mono">{totalSuccessCount} Transaksi</span>
             </div>
-            <div className="bg-[#0f0f13] border border-zinc-800/80 p-5 rounded-2xl">
+            <div className="bg-[#0f0f13]/90 backdrop-blur-md border border-zinc-800/80 p-5 rounded-2xl">
               <span className="text-xs font-mono uppercase text-zinc-500 block mb-1">Menunggu Bayar</span>
               <span className="text-xl font-black text-amber-500 font-mono">{totalPendingCount} Transaksi</span>
             </div>
-            <div className="bg-[#0f0f13] border border-zinc-800/80 p-5 rounded-2xl">
+            <div className="bg-[#0f0f13]/90 backdrop-blur-md border border-zinc-800/80 p-5 rounded-2xl">
               <span className="text-xs font-mono uppercase text-zinc-500 block mb-1">Produk Aktif</span>
               <span className="text-xl font-black text-zinc-200 font-mono">{products.length} Item</span>
             </div>
@@ -856,7 +941,7 @@ export default function App() {
           {adminActiveTab === 'orders' && (
             <div className="space-y-4">
               {orders.map((ord) => (
-                <div key={ord.id} className="bg-[#0f0f13] border border-zinc-800/80 rounded-2xl p-5">
+                <div key={ord.id} className="bg-[#0f0f13]/90 backdrop-blur-md border border-zinc-800/80 rounded-2xl p-5">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-zinc-800/80 pb-3 gap-2">
                     <div className="flex items-center space-x-2">
                       <span className="font-mono font-black text-amber-400 text-base">{ord.id}</span>
@@ -926,7 +1011,7 @@ export default function App() {
 
           {adminActiveTab === 'prices' && (
             <div className="space-y-6">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-[#0f0f13] p-5 rounded-2xl border border-zinc-800">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-[#0f0f13]/90 backdrop-blur-md p-5 rounded-2xl border border-zinc-800">
                 <div>
                   <h3 className="text-sm font-bold text-white font-mono uppercase tracking-wider">Katalog Produk & Penyesuaian Harga</h3>
                   <p className="text-xs text-zinc-400 mt-0.5">Ubah nominal dan tandai status ketersediaan inventaris secara langsung.</p>
@@ -941,7 +1026,7 @@ export default function App() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {products.map((p) => (
-                  <div key={p.id} className="bg-[#0f0f13] border border-zinc-800/80 p-5 rounded-2xl space-y-3">
+                  <div key={p.id} className="bg-[#0f0f13]/90 backdrop-blur-md border border-zinc-800/80 p-5 rounded-2xl space-y-3">
                     <div className="flex items-center space-x-3 border-b border-zinc-800/80 pb-3">
                       <img src={p.image} alt={p.name} className="w-10 h-10 rounded-xl object-cover border border-zinc-700" />
                       <div>
@@ -990,7 +1075,7 @@ export default function App() {
           )}
 
           {adminActiveTab === 'settings' && (
-            <div className="bg-[#0f0f13] border border-zinc-800 p-6 rounded-2xl max-w-xl space-y-4 text-xs">
+            <div className="bg-[#0f0f13]/90 backdrop-blur-md border border-zinc-800 p-6 rounded-2xl max-w-xl space-y-4 text-xs">
               <h3 className="text-sm font-bold text-white font-mono uppercase tracking-wider mb-2">Konfigurasi Pengaturan Toko</h3>
               <div>
                 <label className="block text-zinc-400 font-semibold mb-1">Nomor WhatsApp Admin CS:</label>
@@ -1024,7 +1109,7 @@ export default function App() {
       ) : (
         <>
           {/* Hero Section */}
-          <section className="relative pt-20 pb-16 text-center px-4 overflow-hidden">
+          <section className="relative pt-20 pb-16 text-center px-4 overflow-hidden z-10">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[280px] bg-amber-500/10 blur-[130px] pointer-events-none rounded-full" />
 
             <div className="max-w-3xl mx-auto relative z-10">
@@ -1053,7 +1138,7 @@ export default function App() {
                     className={`px-4 py-2 rounded-full text-xs font-mono font-bold tracking-wider transition ${
                       selectedCategory === tab.id
                         ? 'bg-amber-400 text-black shadow-[0_0_20px_rgba(245,158,11,0.4)]'
-                        : 'bg-[#0f0f13] text-zinc-400 hover:text-white border border-zinc-800'
+                        : 'bg-[#0f0f13]/80 backdrop-blur-md text-zinc-400 hover:text-white border border-zinc-800'
                     }`}
                   >
                     {tab.label}
@@ -1064,14 +1149,14 @@ export default function App() {
           </section>
 
           {/* Grid Katalog Produk */}
-          <main className="max-w-6xl mx-auto px-4 py-6">
+          <main className="max-w-6xl mx-auto px-4 py-6 relative z-10">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredProducts.map((p) => {
                 const cheapest = Math.min(...p.variants.map((v) => v.price));
                 return (
                   <div
                     key={p.id}
-                    className="bg-[#0e0e12] rounded-3xl border border-zinc-800/80 hover:border-amber-500/60 p-6 flex flex-col justify-between transition duration-300 group hover:shadow-[0_0_30px_rgba(245,158,11,0.12)] relative overflow-hidden"
+                    className="bg-[#0e0e12]/90 backdrop-blur-md rounded-3xl border border-zinc-800/80 hover:border-amber-500/60 p-6 flex flex-col justify-between transition duration-300 group hover:shadow-[0_0_30px_rgba(245,158,11,0.12)] relative overflow-hidden"
                   >
                     <div>
                       <div className="flex items-start justify-between mb-4">
@@ -1115,7 +1200,7 @@ export default function App() {
             </div>
 
             {/* Feature Cards */}
-            <section className="mt-16 bg-[#0e0e12] border border-zinc-800 rounded-3xl p-8">
+            <section className="mt-16 bg-[#0e0e12]/90 backdrop-blur-md border border-zinc-800 rounded-3xl p-8">
               <h3 className="text-base font-black font-mono text-white text-center uppercase tracking-widest mb-6">STANDAR KEUNGGULAN YOGS STORE</h3>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
                 <div className="p-4">
@@ -1274,7 +1359,6 @@ export default function App() {
             </div>
 
             <form onSubmit={handleProcessOrder} className="space-y-4 text-xs">
-              {/* Pilihan Variasi */}
               <div>
                 <label className="block text-zinc-300 font-bold mb-2 font-mono uppercase">1. Pilih Paket Variasi:</label>
                 <div className="flex flex-wrap gap-2">
@@ -1303,7 +1387,6 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Tab Deskripsi & S&K */}
               <div className="border-b border-zinc-800">
                 <div className="flex">
                   <button
@@ -1331,7 +1414,6 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Isi Konten Tab */}
               <div className="p-3.5 bg-[#070709] rounded-2xl border border-zinc-800 max-h-48 overflow-y-auto">
                 {activeTab === 'deskripsi' ? (
                   <ul className="space-y-1.5 text-zinc-300">
@@ -1353,7 +1435,6 @@ export default function App() {
                 )}
               </div>
 
-              {/* Form WhatsApp & Email */}
               <div>
                 <label className="block text-zinc-300 font-semibold mb-1.5 font-mono uppercase">2. Kontak Penerima Akun:</label>
                 <div className="space-y-2">
@@ -1376,7 +1457,6 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Metode Bayar */}
               <div>
                 <label className="block text-zinc-300 font-semibold mb-1.5 font-mono uppercase">3. Metode Pembayaran:</label>
                 <div className="grid grid-cols-2 gap-2">
@@ -1400,7 +1480,6 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Total Bayar */}
               <div className="bg-[#070709] p-3.5 rounded-2xl border border-zinc-800 space-y-1">
                 <div className="flex justify-between text-zinc-400 font-mono">
                   <span>Harga Paket</span>
