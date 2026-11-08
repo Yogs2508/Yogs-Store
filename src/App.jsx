@@ -3,6 +3,9 @@ import React, { useState, useEffect } from 'react';
 // URL Logo Toko dari Google Drive kamu
 const STORE_LOGO_URL = 'https://lh3.googleusercontent.com/d/1KHWsqxCJXnNU4BjHUID05nAU7nPZTTtP';
 
+// URL Foto Kamu untuk Hero Section dari Google Drive
+const HERO_IMAGE_URL = 'https://lh3.googleusercontent.com/d/1vu-8Z0Qf2Ynyqb51wO8eiWVB0X3lzOQ2';
+
 const INITIAL_PRODUCTS = [
   {
     id: 'zoom-pro',
@@ -861,13 +864,13 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Kolom Kanan: Visual Card Glow dengan Badge Statistik */}
+              {/* Kolom Kanan: Visual Card Glow Menggunakan Foto Kamu */}
               <div className="lg:col-span-5 relative">
                 <div className="relative rounded-3xl overflow-hidden border border-orange-500/20 bg-gradient-to-b from-orange-500/10 to-transparent p-2 shadow-[0_0_50px_rgba(249,115,22,0.15)]">
                   <img
-                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&auto=format&fit=crop&q=80"
+                    src={HERO_IMAGE_URL}
                     alt="Hero Visual"
-                    className="w-full h-80 sm:h-96 object-cover rounded-2xl filter brightness-90 contrast-110"
+                    className="w-full h-80 sm:h-96 object-cover rounded-2xl filter brightness-95 contrast-105"
                   />
 
                   {/* Floating Metric 1 */}
@@ -999,7 +1002,7 @@ export default function App() {
               })}
             </div>
 
-            {/* Testimonial / Quote Box seperti di bagian bawah referensi */}
+            {/* Testimonial / Quote Box */}
             <div id="garansi" className="mt-16 bg-gradient-to-r from-orange-950/20 via-[#151010] to-[#151010] border border-orange-500/20 rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
               <div className="space-y-2">
                 <span className="text-3xl font-serif text-orange-500 leading-none">“</span>
